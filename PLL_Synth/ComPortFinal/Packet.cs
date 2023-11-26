@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ComPortFinal
 {
-    enum PacketError
+    public enum PacketError
     {
         LengthError,
         HeaderError,
@@ -13,7 +13,7 @@ namespace ComPortFinal
         ChecksumError,
     }
 
-    internal class Packet
+    public class Packet
     {
         // basic packet: "{expHeader}{NUM[2..0]}{PAYLOAD}{CHXUM[2..0]}\r\n"
         private int _expLength;     // the expected packet length
@@ -160,11 +160,19 @@ namespace ComPortFinal
 
             // convert payload to bytes to calculate checksum
             byte[] payloadByte = Encoding.UTF8.GetBytes(payload);
-            // calculate checksum
-            for (int i = 0; i < 4; i++)
+            try
             {
-                chx += payloadByte[i];
+                // calculate checksum
+                for (int i = 0; i < _expPayloadLength; i++)
+                {
+                    chx += payloadByte[i];
+                }
+            } catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                return;
             }
+            
 
             // create packet string
             string packetString = _expHeader + payload + chx.ToString() + "\r\n";

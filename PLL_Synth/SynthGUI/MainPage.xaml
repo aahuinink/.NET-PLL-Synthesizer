@@ -5,10 +5,26 @@
 
     <ScrollView>
         <HorizontalStackLayout>
-            <Button x:Name="btnSend"
-                    Padding="10"/>
+            <Picker x:Name="pkComPorts"
+                    Margin="10"
+                    HeightRequest="50"/>
+            <Button x:Name="btnListCOM"
+                    Margin="10"
+                    Text="List COMs"
+                    HeightRequest="50"
+                    WidthRequest="150"
+                    Pressed="MainPage_Loaded"/>
+            <Button x:Name="btnOpenCOM"
+                    Margin="10"
+                    Text="Open COM"
+                    HeightRequest="50"
+                    WidthRequest="150"
+                    Pressed="btnOpenCOM_Pressed"/>
             <Entry x:Name="entryInput"
                    Text="Enter 4-bit binary number"
+                   Margin="10"
+                   Completed="entryInput_Completed"
+                   HeightRequest="20"/>
         </HorizontalStackLayout>
     </ScrollView>
 

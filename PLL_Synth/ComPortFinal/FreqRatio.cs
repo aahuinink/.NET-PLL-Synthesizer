@@ -74,6 +74,8 @@ namespace ComPortFinal
                     Denominator = 2;
                     Numerator = 1;
                     break;
+                default:
+                    break;
             }
         }
     }

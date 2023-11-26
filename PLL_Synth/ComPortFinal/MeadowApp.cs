@@ -77,8 +77,6 @@ namespace ComPortFinal
             serialPort.Read(response, 0, 12);
             string recieved = response.ToString();
 
-            //TODO: write what do to with serial data
-
             // parse into packet object
             errors = packet.TryRXParse(recieved);
 
@@ -95,7 +93,14 @@ namespace ComPortFinal
 
             Console.WriteLine(packet.Payload); // for debugging
 
-            
+            FreqRatio ratio = new FreqRatio();
+
+            // convert packet payload to a frequency ratio
+            ratio.RatioLookup(packet.Payload);
+
+            SetFreqDivider(ratio.Denominator);
+
+
 
             return;
         }
@@ -108,12 +113,23 @@ namespace ComPortFinal
             }
         }
 
-        private int[] FreqDivLookup()
+        private void SetFreqDivider(byte division)
         {
-            int[] ratio = new int[2];
+            // shift in the 6 bit value into the divider output ports
+            for (byte i = 0; i < 6; i++)
+            {
+                frequencyDivOutput[i].State = (division >> i & 0x01) == 0x01;
+            }
+            return;
+        }
 
-            return ratio;
+        private void Pulse(IDigitalOutputPort port)
+        {
+            port.State = true;  // bring high
+            Thread.Sleep(1);    // let voltage stabilize
+            port.State = false; // bring low
+            Thread.Sleep(1);    // stabilize
+            return;
         }
     }
-
 }

@@ -17,7 +17,6 @@ namespace ComPortFinal
     {
         // hardware objects
         ISerialPort serialPort;
-
         //public MeadowApp()
         //{
         //    Initialize();

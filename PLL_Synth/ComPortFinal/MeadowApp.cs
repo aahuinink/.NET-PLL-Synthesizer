@@ -27,14 +27,11 @@ namespace ComPortFinal
             Device.CreateDigitalOutputPort(Device.Pins.D08, false),
             Device.CreateDigitalOutputPort(Device.Pins.D09, false),
             Device.CreateDigitalOutputPort(Device.Pins.D10, false),
-    };
+        };
         IDigitalOutputPort M_set =
             Device.CreateDigitalOutputPort(Device.Pins.D04, false);
         IDigitalOutputPort N_set =
             Device.CreateDigitalOutputPort(Device.Pins.D03, false);
-
-        Packet packet = new Packet();
-        ErrorChecking errorChecker = new ErrorChecking();
 
         //public MeadowApp()
         //{
@@ -66,9 +63,7 @@ namespace ComPortFinal
 
         private void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            Packet packet = new Packet(expPayloadLength: 4, numberFlag: false); // total length is
-            List<PacketError> errors = new List<PacketError>();
-            ErrorChecking errorChecker = new ErrorChecking();
+            Packet packet = new Packet(expPayloadLength: 4, numberFlag: false); // total length is 12 
 
             //Console.WriteLine(serialPort.BytesToRead);
 
@@ -78,7 +73,7 @@ namespace ComPortFinal
             string recieved = response.ToString();
 
             // parse into packet object
-            errors = packet.TryRXParse(recieved);
+            List<PacketError> errors = packet.TryRXParse(recieved);
 
             // check for errors
             if (errors.Count > 0)
@@ -91,16 +86,20 @@ namespace ComPortFinal
                 return;
             }
 
-            Console.WriteLine(packet.Payload); // for debugging
-
-            FreqRatio ratio = new FreqRatio();
+            FreqRatio freqRatio = new FreqRatio();
 
             // convert packet payload to a frequency ratio
-            ratio.RatioLookup(packet.Payload);
+            freqRatio.RatioLookup(packet.Payload);
 
-            SetFreqDivider(ratio.Denominator);
+            // set the denominator
+            SetFreqDivider(freqRatio.Denominator);
 
+            Pulse(N_set);
 
+            // set the numerator
+            SetFreqDivider(freqRatio.Denominator);
+
+            Pulse(M_set);
 
             return;
         }
@@ -120,13 +119,14 @@ namespace ComPortFinal
             {
                 frequencyDivOutput[i].State = (division >> i & 0x01) == 0x01;
             }
+            Thread.Sleep(1); // let voltages stabilize
             return;
         }
 
         private void Pulse(IDigitalOutputPort port)
         {
             port.State = true;  // bring high
-            Thread.Sleep(1);    // let voltage stabilize
+            Thread.Sleep(1);    // let voltage stabilize and let latches set
             port.State = false; // bring low
             Thread.Sleep(1);    // stabilize
             return;

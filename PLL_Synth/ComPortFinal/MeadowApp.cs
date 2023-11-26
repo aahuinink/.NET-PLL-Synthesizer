@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -64,12 +66,38 @@ namespace ComPortFinal
 
         private void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
+            Packet packet = new Packet(expPayloadLength: 4, numberFlag: false); // total length is
+            List<PacketError> errors = new List<PacketError>();
+            ErrorChecking errorChecker = new ErrorChecking();
 
             //Console.WriteLine(serialPort.BytesToRead);
+
+            // total length: 3 wide header, 4 wide payload, no packet number, 3 wide chxum, cr + nl = 12
             byte[] response = new byte[12];
             serialPort.Read(response, 0, 12);
+            string recieved = response.ToString();
 
             //TODO: write what do to with serial data
+
+            // parse into packet object
+            errors = packet.TryRXParse(recieved);
+
+            // check for errors
+            if (errors.Count > 0)
+            {
+                //foreach ( PacketError error in errors)
+                //{
+                //    errorChecker.Handle(error);           
+                //}
+                // no need to handle bc the meadow board doesn't care about keeping track of errors right now
+                return;
+            }
+
+            Console.WriteLine(packet.Payload); // for debugging
+
+            
+
+            return;
         }
 
         private void RunLoop()
@@ -78,6 +106,13 @@ namespace ComPortFinal
             while (true)
             {
             }
+        }
+
+        private int[] FreqDivLookup()
+        {
+            int[] ratio = new int[2];
+
+            return ratio;
         }
     }
 

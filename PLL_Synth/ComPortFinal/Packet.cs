@@ -15,7 +15,7 @@ namespace ComPortFinal
 
     internal class Packet
     {
-        // basic packet: "###{NUM[2..0]}{KEYVAL[3..0]}{CHXUM[2..0]}\r\n"
+        // basic packet: "{expHeader}{NUM[2..0]}{PAYLOAD}{CHXUM[2..0]}\r\n"
         private int _expLength;     // the expected packet length
         private string _expHeader;  // the expected packet header
         private int _expPayloadLength; // the expected payload length in bytes
@@ -23,14 +23,14 @@ namespace ComPortFinal
         private int _length;        // the length of the packet
         private string _header;     // the packet header
         private int _number;        // the packet number
-        private string _message;    // the packet payload
+        private string _payload;    // the packet payload
         private double[] _analogValues = new double[5];
         private int _checksum;      // the packet checksum
 
         public int Length { get => _length; set => _length = value; }
         public string Header { get => _header; set => _header = value; }
         public int Number { get => _number; set => _number = value; }
-        public string Message { get => _message; set => _message = value; }
+        public string Payload { get => _payload; set => _payload = value; }
         public int Checksum { get => _checksum; set => _checksum = value; }
 
         /// <summary>
@@ -137,7 +137,7 @@ namespace ComPortFinal
             chx %= 1000; // take last three digits of chxum
 
             // pop message
-            Message = recieved.Substring(0, _expPayloadLength);
+            Payload = recieved.Substring(0, _expPayloadLength);
             recieved = recieved.Substring(_expPayloadLength);
 
             // check recieved checksum

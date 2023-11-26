@@ -52,7 +52,7 @@ namespace ComPortFinal
             byte[] response = new byte[12];
             serialPort.Read(response, 0, 12);
 
-            //TODO: write a run loop
+            //TODO: write what do to with serial data
         }
 
         private void RunLoop()

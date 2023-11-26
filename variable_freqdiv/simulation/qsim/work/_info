@@ -11,31 +11,31 @@ z2
 cModel Technology
 Z0 dC:/Users/a_hui/OneDrive - Camosun College/school/fall_2023/ecet230_oop/final_project/simulation/qsim
 Ehard_block
-Z1 w1700849093
+Z1 w1700966826
 Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
 Z3 DPx11 fiftyfivenm 21 fiftyfivenm_atom_pack 0 22 ]LY<>e3?`4Wb8dl1GV_X90
 Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
 Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z6 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 Z7 DPx11 fiftyfivenm 22 fiftyfivenm_components 0 22 `f]nQdYHZLbCG_>oYeZOo2
-!i122 14
-R0
-Z8 8variable_freqdiv.vho
-Z9 Fvariable_freqdiv.vho
+!i122 42
+Z8 dC:/Users/a_hui/source/repos/dotNET-PLL-Synth/variable_freqdiv/simulation/qsim
+Z9 8variable_freqdiv.vho
+Z10 Fvariable_freqdiv.vho
 l0
 L35 1
 Vhj[i;a0dD85B`o1JPT^cg2
 !s100 3A]XnMhF<;9mKUe5mn3aM1
-Z10 OV;C;2020.1;71
+Z11 OV;C;2020.1;71
 32
-Z11 !s110 1700849094
+Z12 !s110 1700966827
 !i10b 1
-Z12 !s108 1700849094.000000
-Z13 !s90 -work|work|variable_freqdiv.vho|
-Z14 !s107 variable_freqdiv.vho|
+Z13 !s108 1700966827.000000
+Z14 !s90 -work|work|variable_freqdiv.vho|
+Z15 !s107 variable_freqdiv.vho|
 !i113 1
-Z15 o-work work
-Z16 tExplicit 1 CvgOpt 0
+Z16 o-work work
+Z17 tExplicit 1 CvgOpt 0
 Astructure
 R2
 R3
@@ -44,115 +44,115 @@ R5
 R6
 R7
 DEx4 work 10 hard_block 0 22 hj[i;a0dD85B`o1JPT^cg2
-!i122 14
+!i122 42
 l76
 L54 28
 Va5ClDYec`9chO`Ne0M1NL2
 !s100 >:Wi^nX[YiN=@>>JC6K_83
-R10
-32
 R11
-!i10b 1
+32
 R12
+!i10b 1
 R13
 R14
-!i113 1
 R15
+!i113 1
 R16
+R17
 Evariable_freqdiv
 R1
 R3
 R7
 R2
-Z17 DPx6 altera 11 dffeas_pack 0 22 H5F:RRfLz82T3`4>@b7mS3
+Z18 DPx6 altera 11 dffeas_pack 0 22 H5F:RRfLz82T3`4>@b7mS3
 R4
 R5
 R6
-Z18 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
-!i122 14
-R0
+Z19 DPx6 altera 28 altera_primitives_components 0 22 VSD=32;3391kSOd?PDZYj3
+!i122 42
 R8
 R9
+R10
 l0
 L91 1
-V3HDXYFEWN1X]g=1W5Pe2I0
-!s100 dcl<l6FAUHmB3lY4H2LB11
-R10
-32
+VfANazFPRW:5B?1g[kEZDb1
+!s100 S;RR1THEM?j=fn8mO0oJ71
 R11
-!i10b 1
+32
 R12
+!i10b 1
 R13
 R14
-!i113 1
 R15
+!i113 1
 R16
+R17
 Astructure
 R3
 R7
 R2
-R17
+R18
 R4
 R5
 R6
-R18
-DEx4 work 16 variable_freqdiv 0 22 3HDXYFEWN1X]g=1W5Pe2I0
-!i122 14
-l200
-L121 896
-VJEKbZADUS7NQbVNmzNj7o2
-!s100 6?5R]ni=MlTMLkhEjD83G1
-R10
-32
+R19
+DEx4 work 16 variable_freqdiv 0 22 fANazFPRW:5B?1g[kEZDb1
+!i122 42
+l225
+L130 1261
+VQJhQB`E6UkETDIGVn0Tkk2
+!s100 ]5`mHYK9DcAW5TRi66KhG0
 R11
-!i10b 1
+32
 R12
+!i10b 1
 R13
 R14
-!i113 1
 R15
+!i113 1
 R16
+R17
 Evariable_freqdiv_vhd_vec_tst
-Z19 w1700849092
+Z20 w1700966825
 R5
 R6
-!i122 15
-R0
-Z20 8Waveform.vwf.vht
-Z21 FWaveform.vwf.vht
+!i122 43
+R8
+Z21 8Waveform1.vwf.vht
+Z22 FWaveform1.vwf.vht
 l0
 L32 1
 VEX?2FYKR[V:^nIe@7?j>E3
 !s100 3k8_CO]<i@nO4D<LSYUz=1
-R10
-32
 R11
-!i10b 1
+32
 R12
-Z22 !s90 -work|work|Waveform.vwf.vht|
-Z23 !s107 Waveform.vwf.vht|
+!i10b 1
+R13
+Z23 !s90 -work|work|Waveform1.vwf.vht|
+Z24 !s107 Waveform1.vwf.vht|
 !i113 1
-R15
 R16
+R17
 Avariable_freqdiv_arch
 R5
 R6
-Z24 DEx4 work 28 variable_freqdiv_vhd_vec_tst 0 22 EX?2FYKR[V:^nIe@7?j>E3
-!i122 15
-l53
-Z25 L34 86
-VE8H4jiHfVO[Q8d^@9l?no3
-!s100 2mgG]c[dP4mXZXHTnJEng3
-R10
-32
+Z25 DEx4 work 28 variable_freqdiv_vhd_vec_tst 0 22 EX?2FYKR[V:^nIe@7?j>E3
+!i122 43
+l57
+Z26 L34 115
+VAZ9nk28EICGI<l>T_XaD02
+!s100 f_c=j[dicJjNm]I18H?8n1
 R11
-!i10b 1
+32
 R12
-R22
+!i10b 1
+R13
 R23
+R24
 !i113 1
-R15
 R16
+R17
 vvariable_freqdiv_vlg_vec_tst
 !s110 1700847073
 !i10b 1
@@ -174,5 +174,5 @@ r1
 !s107 Waveform.vwf.vt|
 !s90 -work|work|Waveform.vwf.vt|
 !i113 1
-R15
+R16
 tCvgOpt 0

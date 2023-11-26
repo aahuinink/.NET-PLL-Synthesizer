@@ -1,5 +1,5 @@
 Analysis & Synthesis report for variable_freqdiv
-Fri Nov 24 10:07:28 2023
+Sat Nov 25 18:39:34 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -13,12 +13,15 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: LPM_COUNTER:div_M
- 10. Parameter Settings for User Entity Instance: LPM_COUNTER:div_M10
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Parameter Settings for User Entity Instance: LPM_COUNTER:div_M
+ 11. Parameter Settings for User Entity Instance: LPM_LATCH:inst4
+ 12. Parameter Settings for User Entity Instance: LPM_COUNTER:div_M10
+ 13. Parameter Settings for User Entity Instance: LPM_LATCH:inst5
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
 
 
 
@@ -45,16 +48,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Nov 24 10:07:27 2023       ;
+; Analysis & Synthesis Status        ; Successful - Sat Nov 25 18:39:34 2023       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; variable_freqdiv                            ;
 ; Top-level Entity Name              ; variable_freqdiv                            ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 20                                          ;
-;     Total combinational functions  ; 20                                          ;
+; Total logic elements               ; 34                                          ;
+;     Total combinational functions  ; 34                                          ;
 ;     Dedicated logic registers      ; 12                                          ;
 ; Total registers                    ; 12                                          ;
-; Total pins                         ; 16                                          ;
+; Total pins                         ; 23                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -163,61 +166,63 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-14        ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-14        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                         ;
-+----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                                               ; Library ;
-+----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------------------------------------------------+---------+
-; variable_freqdiv.bdf             ; yes             ; User Block Diagram/Schematic File  ; C:/Users/a_hui/OneDrive - Camosun College/school/fall_2023/ecet230_oop/final_project/variable_freqdiv/variable_freqdiv.bdf ;         ;
-; clk_bypass.bdf                   ; yes             ; User Block Diagram/Schematic File  ; C:/Users/a_hui/OneDrive - Camosun College/school/fall_2023/ecet230_oop/final_project/variable_freqdiv/clk_bypass.bdf       ;         ;
-; lpm_counter.tdf                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_counter.tdf                                                     ;         ;
-; lpm_constant.inc                 ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_constant.inc                                                    ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_decode.inc                                                      ;         ;
-; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_add_sub.inc                                                     ;         ;
-; cmpconst.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/cmpconst.inc                                                        ;         ;
-; lpm_compare.inc                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_compare.inc                                                     ;         ;
-; lpm_counter.inc                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_counter.inc                                                     ;         ;
-; dffeea.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/dffeea.inc                                                          ;         ;
-; alt_counter_stratix.inc          ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/alt_counter_stratix.inc                                             ;         ;
-; aglobal201.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                                                      ;         ;
-; db/cntr_ftj.tdf                  ; yes             ; Auto-Generated Megafunction        ; C:/Users/a_hui/OneDrive - Camosun College/school/fall_2023/ecet230_oop/final_project/variable_freqdiv/db/cntr_ftj.tdf      ;         ;
-+----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                 ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                       ; Library ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------+---------+
+; variable_freqdiv.bdf             ; yes             ; User Block Diagram/Schematic File  ; C:/Users/a_hui/source/repos/dotNET-PLL-Synth/variable_freqdiv/variable_freqdiv.bdf ;         ;
+; clk_bypass.bdf                   ; yes             ; User Block Diagram/Schematic File  ; C:/Users/a_hui/source/repos/dotNET-PLL-Synth/variable_freqdiv/clk_bypass.bdf       ;         ;
+; lpm_counter.tdf                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_counter.tdf             ;         ;
+; lpm_constant.inc                 ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_constant.inc            ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_decode.inc              ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_add_sub.inc             ;         ;
+; cmpconst.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/cmpconst.inc                ;         ;
+; lpm_compare.inc                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_compare.inc             ;         ;
+; lpm_counter.inc                  ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_counter.inc             ;         ;
+; dffeea.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/dffeea.inc                  ;         ;
+; alt_counter_stratix.inc          ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/alt_counter_stratix.inc     ;         ;
+; aglobal201.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc              ;         ;
+; db/cntr_cki.tdf                  ; yes             ; Auto-Generated Megafunction        ; C:/Users/a_hui/source/repos/dotNET-PLL-Synth/variable_freqdiv/db/cntr_cki.tdf      ;         ;
+; lpm_latch.tdf                    ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_latch.tdf               ;         ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 20        ;
-;                                             ;           ;
-; Total combinational functions               ; 20        ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 4         ;
-;     -- 3 input functions                    ; 0         ;
-;     -- <=2 input functions                  ; 16        ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 8         ;
-;     -- arithmetic mode                      ; 12        ;
-;                                             ;           ;
-; Total registers                             ; 12        ;
-;     -- Dedicated logic registers            ; 12        ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 16        ;
-;                                             ;           ;
-; Embedded Multiplier 9-bit elements          ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; CLK~input ;
-; Maximum fan-out                             ; 14        ;
-; Total fan-out                               ; 122       ;
-; Average fan-out                             ; 1.91      ;
-+---------------------------------------------+-----------+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 34             ;
+;                                             ;                ;
+; Total combinational functions               ; 34             ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 4              ;
+;     -- 3 input functions                    ; 12             ;
+;     -- <=2 input functions                  ; 18             ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 22             ;
+;     -- arithmetic mode                      ; 12             ;
+;                                             ;                ;
+; Total registers                             ; 12             ;
+;     -- Dedicated logic registers            ; 12             ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 23             ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLK_base~input ;
+; Maximum fan-out                             ; 14             ;
+; Total fan-out                               ; 169            ;
+; Average fan-out                             ; 1.84           ;
++---------------------------------------------+----------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -225,15 +230,39 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                           ; Entity Name      ; Library Name ;
 +---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------+------------------+--------------+
-; |variable_freqdiv               ; 20 (0)              ; 12 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 16   ; 0            ; 0          ; |variable_freqdiv                                             ; variable_freqdiv ; work         ;
+; |variable_freqdiv               ; 34 (2)              ; 12 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 23   ; 0            ; 0          ; |variable_freqdiv                                             ; variable_freqdiv ; work         ;
 ;    |clk_bypass:inst8|           ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |variable_freqdiv|clk_bypass:inst8                            ; clk_bypass       ; work         ;
 ;    |clk_bypass:inst|            ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |variable_freqdiv|clk_bypass:inst                             ; clk_bypass       ; work         ;
 ;    |lpm_counter:div_M10|        ; 7 (0)               ; 6 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |variable_freqdiv|lpm_counter:div_M10                         ; lpm_counter      ; work         ;
-;       |cntr_ftj:auto_generated| ; 7 (7)               ; 6 (6)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |variable_freqdiv|lpm_counter:div_M10|cntr_ftj:auto_generated ; cntr_ftj         ; work         ;
+;       |cntr_cki:auto_generated| ; 7 (7)               ; 6 (6)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |variable_freqdiv|lpm_counter:div_M10|cntr_cki:auto_generated ; cntr_cki         ; work         ;
 ;    |lpm_counter:div_M|          ; 7 (0)               ; 6 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |variable_freqdiv|lpm_counter:div_M                           ; lpm_counter      ; work         ;
-;       |cntr_ftj:auto_generated| ; 7 (7)               ; 6 (6)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |variable_freqdiv|lpm_counter:div_M|cntr_ftj:auto_generated   ; cntr_ftj         ; work         ;
+;       |cntr_cki:auto_generated| ; 7 (7)               ; 6 (6)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |variable_freqdiv|lpm_counter:div_M|cntr_cki:auto_generated   ; cntr_cki         ; work         ;
+;    |lpm_latch:inst4|            ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |variable_freqdiv|lpm_latch:inst4                             ; lpm_latch        ; work         ;
+;    |lpm_latch:inst5|            ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |variable_freqdiv|lpm_latch:inst5                             ; lpm_latch        ; work         ;
 +---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; lpm_latch:inst4|latches[5]                          ; M_set               ; yes                    ;
+; lpm_latch:inst4|latches[4]                          ; M_set               ; yes                    ;
+; lpm_latch:inst4|latches[3]                          ; M_set               ; yes                    ;
+; lpm_latch:inst4|latches[2]                          ; M_set               ; yes                    ;
+; lpm_latch:inst4|latches[1]                          ; M_set               ; yes                    ;
+; lpm_latch:inst4|latches[0]                          ; M_set               ; yes                    ;
+; lpm_latch:inst5|latches[5]                          ; N_set               ; yes                    ;
+; lpm_latch:inst5|latches[4]                          ; N_set               ; yes                    ;
+; lpm_latch:inst5|latches[3]                          ; N_set               ; yes                    ;
+; lpm_latch:inst5|latches[2]                          ; N_set               ; yes                    ;
+; lpm_latch:inst5|latches[1]                          ; N_set               ; yes                    ;
+; lpm_latch:inst5|latches[0]                          ; N_set               ; yes                    ;
+; Number of user-specified and inferred latches = 12  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -246,7 +275,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Number of registers using Synchronous Load   ; 12    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 12    ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -273,8 +302,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; CARRY_CNT_EN           ; SMART             ; Untyped            ;
 ; LABWIDE_SCLR           ; ON                ; Untyped            ;
 ; USE_NEW_VERSION        ; TRUE              ; Untyped            ;
-; CBXI_PARAMETER         ; cntr_ftj          ; Untyped            ;
+; CBXI_PARAMETER         ; cntr_cki          ; Untyped            ;
 +------------------------+-------------------+--------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LPM_LATCH:inst4 ;
++----------------+--------+------------------------------------+
+; Parameter Name ; Value  ; Type                               ;
++----------------+--------+------------------------------------+
+; LPM_WIDTH      ; 6      ; Untyped                            ;
+; LPM_AVALUE     ; UNUSED ; Untyped                            ;
++----------------+--------+------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -300,8 +340,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; CARRY_CNT_EN           ; SMART             ; Untyped             ;
 ; LABWIDE_SCLR           ; ON                ; Untyped             ;
 ; USE_NEW_VERSION        ; TRUE              ; Untyped             ;
-; CBXI_PARAMETER         ; cntr_ftj          ; Untyped             ;
+; CBXI_PARAMETER         ; cntr_cki          ; Untyped             ;
 +------------------------+-------------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LPM_LATCH:inst5 ;
++----------------+--------+------------------------------------+
+; Parameter Name ; Value  ; Type                               ;
++----------------+--------+------------------------------------+
+; LPM_WIDTH      ; 6      ; Untyped                            ;
+; LPM_AVALUE     ; UNUSED ; Untyped                            ;
++----------------+--------+------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -310,20 +361,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 16                          ;
+; boundary_port         ; 23                          ;
 ; cycloneiii_ff         ; 12                          ;
-;     ENA SLD           ; 12                          ;
-; cycloneiii_lcell_comb ; 20                          ;
+;     SLD               ; 12                          ;
+; cycloneiii_lcell_comb ; 34                          ;
 ;     arith             ; 12                          ;
 ;         1 data inputs ; 2                           ;
 ;         2 data inputs ; 10                          ;
-;     normal            ; 8                           ;
+;     normal            ; 22                          ;
 ;         0 data inputs ; 2                           ;
-;         2 data inputs ; 2                           ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 12                          ;
 ;         4 data inputs ; 4                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.60                        ;
-; Average LUT depth     ; 2.03                        ;
+; Average LUT depth     ; 1.81                        ;
 +-----------------------+-----------------------------+
 
 
@@ -342,7 +394,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Fri Nov 24 10:07:20 2023
+    Info: Processing started: Sat Nov 25 18:39:27 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off variable_freqdiv -c variable_freqdiv
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
@@ -350,6 +402,10 @@ Info (12021): Found 1 design units, including 1 entities, in source file variabl
     Info (12023): Found entity 1: variable_freqdiv
 Info (12021): Found 1 design units, including 1 entities, in source file clk_bypass.bdf
     Info (12023): Found entity 1: clk_bypass
+Info (12021): Found 1 design units, including 1 entities, in source file pin_saver.bdf
+    Info (12023): Found entity 1: pin_saver
+Info (12021): Found 1 design units, including 1 entities, in source file 6bit_shift.bdf
+    Info (12023): Found entity 1: 6bit_shift
 Info (12127): Elaborating entity "variable_freqdiv" for the top level hierarchy
 Info (12128): Elaborating entity "clk_bypass" for hierarchy "clk_bypass:inst"
 Info (12128): Elaborating entity "LPM_COUNTER" for hierarchy "LPM_COUNTER:div_M"
@@ -357,20 +413,24 @@ Info (12130): Elaborated megafunction instantiation "LPM_COUNTER:div_M"
 Info (12133): Instantiated megafunction "LPM_COUNTER:div_M" with the following parameter:
     Info (12134): Parameter "LPM_DIRECTION" = "DOWN"
     Info (12134): Parameter "LPM_WIDTH" = "6"
-Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_ftj.tdf
-    Info (12023): Found entity 1: cntr_ftj File: C:/Users/a_hui/OneDrive - Camosun College/school/fall_2023/ecet230_oop/final_project/variable_freqdiv/db/cntr_ftj.tdf Line: 26
-Info (12128): Elaborating entity "cntr_ftj" for hierarchy "LPM_COUNTER:div_M|cntr_ftj:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 259
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_cki.tdf
+    Info (12023): Found entity 1: cntr_cki File: C:/Users/a_hui/source/repos/dotNET-PLL-Synth/variable_freqdiv/db/cntr_cki.tdf Line: 26
+Info (12128): Elaborating entity "cntr_cki" for hierarchy "LPM_COUNTER:div_M|cntr_cki:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 259
+Info (12128): Elaborating entity "LPM_LATCH" for hierarchy "LPM_LATCH:inst4"
+Info (12130): Elaborated megafunction instantiation "LPM_LATCH:inst4"
+Info (12133): Instantiated megafunction "LPM_LATCH:inst4" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTH" = "6"
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 36 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 14 input pins
-    Info (21059): Implemented 2 output pins
-    Info (21061): Implemented 20 logic cells
+Info (21057): Implemented 57 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 9 input pins
+    Info (21059): Implemented 14 output pins
+    Info (21061): Implemented 34 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4833 megabytes
-    Info: Processing ended: Fri Nov 24 10:07:28 2023
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:16
+    Info: Peak virtual memory: 4859 megabytes
+    Info: Processing ended: Sat Nov 25 18:39:34 2023
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:14
 
 

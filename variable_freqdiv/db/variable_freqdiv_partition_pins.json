@@ -12,59 +12,87 @@
 					"strict" : false
 				},
 				{
-					"name" : "CLK",
+					"name" : "checkM[5]",
 					"strict" : false
 				},
 				{
-					"name" : "M[5]",
+					"name" : "checkM[4]",
 					"strict" : false
 				},
 				{
-					"name" : "M[4]",
+					"name" : "checkM[3]",
 					"strict" : false
 				},
 				{
-					"name" : "M[3]",
+					"name" : "checkM[2]",
 					"strict" : false
 				},
 				{
-					"name" : "M[2]",
+					"name" : "checkM[1]",
 					"strict" : false
 				},
 				{
-					"name" : "M[1]",
+					"name" : "checkM[0]",
 					"strict" : false
 				},
 				{
-					"name" : "M[0]",
+					"name" : "checkN[5]",
 					"strict" : false
 				},
 				{
-					"name" : "N[5]",
+					"name" : "checkN[4]",
 					"strict" : false
 				},
 				{
-					"name" : "N[4]",
+					"name" : "checkN[3]",
 					"strict" : false
 				},
 				{
-					"name" : "N[3]",
+					"name" : "checkN[2]",
 					"strict" : false
 				},
 				{
-					"name" : "N[2]",
+					"name" : "checkN[1]",
 					"strict" : false
 				},
 				{
-					"name" : "N[1]",
+					"name" : "checkN[0]",
 					"strict" : false
 				},
 				{
-					"name" : "N[0]",
+					"name" : "CLK_base",
 					"strict" : false
 				},
 				{
-					"name" : "GND",
+					"name" : "M_set",
+					"strict" : false
+				},
+				{
+					"name" : "div_value[5]",
+					"strict" : false
+				},
+				{
+					"name" : "div_value[4]",
+					"strict" : false
+				},
+				{
+					"name" : "div_value[3]",
+					"strict" : false
+				},
+				{
+					"name" : "div_value[2]",
+					"strict" : false
+				},
+				{
+					"name" : "div_value[1]",
+					"strict" : false
+				},
+				{
+					"name" : "div_value[0]",
+					"strict" : false
+				},
+				{
+					"name" : "N_set",
 					"strict" : false
 				}
 			]

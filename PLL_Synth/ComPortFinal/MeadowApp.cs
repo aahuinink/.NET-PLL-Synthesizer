@@ -17,6 +17,23 @@ namespace ComPortFinal
     {
         // hardware objects
         ISerialPort serialPort;
+        IDigitalOutputPort[] frequencyDivOutput =
+        {
+            Device.CreateDigitalOutputPort(Device.Pins.D05, false),
+            Device.CreateDigitalOutputPort(Device.Pins.D06, false),
+            Device.CreateDigitalOutputPort(Device.Pins.D07, false),
+            Device.CreateDigitalOutputPort(Device.Pins.D08, false),
+            Device.CreateDigitalOutputPort(Device.Pins.D09, false),
+            Device.CreateDigitalOutputPort(Device.Pins.D10, false),
+    };
+        IDigitalOutputPort M_set =
+            Device.CreateDigitalOutputPort(Device.Pins.D04, false);
+        IDigitalOutputPort N_set =
+            Device.CreateDigitalOutputPort(Device.Pins.D03, false);
+
+        Packet packet = new Packet();
+        ErrorChecking errorChecker = new ErrorChecking();
+
         //public MeadowApp()
         //{
         //    Initialize();

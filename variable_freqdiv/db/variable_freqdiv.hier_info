@@ -1,38 +1,38 @@
 |variable_freqdiv
 M_out <= clk_bypass:inst.OUT
-CLK => LPM_COUNTER:div_M.clock
-CLK => clk_bypass:inst.CLK_base
-CLK => LPM_COUNTER:div_M10.clock
-CLK => clk_bypass:inst8.CLK_base
-GND => LPM_COUNTER:div_M.clk_en
-GND => LPM_COUNTER:div_M.cnt_en
-GND => LPM_COUNTER:div_M10.clk_en
-GND => LPM_COUNTER:div_M10.cnt_en
-M[0] => LPM_COUNTER:div_M.data[0]
-M[0] => clk_bypass:inst.IN[0]
-M[1] => LPM_COUNTER:div_M.data[1]
-M[1] => clk_bypass:inst.IN[1]
-M[2] => LPM_COUNTER:div_M.data[2]
-M[2] => clk_bypass:inst.IN[2]
-M[3] => LPM_COUNTER:div_M.data[3]
-M[3] => clk_bypass:inst.IN[3]
-M[4] => LPM_COUNTER:div_M.data[4]
-M[4] => clk_bypass:inst.IN[4]
-M[5] => LPM_COUNTER:div_M.data[5]
-M[5] => clk_bypass:inst.IN[5]
+M_set => i.IN0
+M_set => LPM_LATCH:inst4.gate
+CLK_base => LPM_COUNTER:div_M.clock
+CLK_base => clk_bypass:inst.CLK_base
+CLK_base => LPM_COUNTER:div_M10.clock
+CLK_base => clk_bypass:inst8.CLK_base
+div_value[0] => LPM_LATCH:inst4.data[0]
+div_value[0] => LPM_LATCH:inst5.data[0]
+div_value[1] => LPM_LATCH:inst4.data[1]
+div_value[1] => LPM_LATCH:inst5.data[1]
+div_value[2] => LPM_LATCH:inst4.data[2]
+div_value[2] => LPM_LATCH:inst5.data[2]
+div_value[3] => LPM_LATCH:inst4.data[3]
+div_value[3] => LPM_LATCH:inst5.data[3]
+div_value[4] => LPM_LATCH:inst4.data[4]
+div_value[4] => LPM_LATCH:inst5.data[4]
+div_value[5] => LPM_LATCH:inst4.data[5]
+div_value[5] => LPM_LATCH:inst5.data[5]
 N_out <= clk_bypass:inst8.OUT
-N[0] => LPM_COUNTER:div_M10.data[0]
-N[0] => clk_bypass:inst8.IN[0]
-N[1] => LPM_COUNTER:div_M10.data[1]
-N[1] => clk_bypass:inst8.IN[1]
-N[2] => LPM_COUNTER:div_M10.data[2]
-N[2] => clk_bypass:inst8.IN[2]
-N[3] => LPM_COUNTER:div_M10.data[3]
-N[3] => clk_bypass:inst8.IN[3]
-N[4] => LPM_COUNTER:div_M10.data[4]
-N[4] => clk_bypass:inst8.IN[4]
-N[5] => LPM_COUNTER:div_M10.data[5]
-N[5] => clk_bypass:inst8.IN[5]
+N_set => i1.IN0
+N_set => LPM_LATCH:inst5.gate
+checkM[0] <= M[0].DB_MAX_OUTPUT_PORT_TYPE
+checkM[1] <= M[1].DB_MAX_OUTPUT_PORT_TYPE
+checkM[2] <= M[2].DB_MAX_OUTPUT_PORT_TYPE
+checkM[3] <= M[3].DB_MAX_OUTPUT_PORT_TYPE
+checkM[4] <= M[4].DB_MAX_OUTPUT_PORT_TYPE
+checkM[5] <= M[5].DB_MAX_OUTPUT_PORT_TYPE
+checkN[0] <= N[0].DB_MAX_OUTPUT_PORT_TYPE
+checkN[1] <= N[1].DB_MAX_OUTPUT_PORT_TYPE
+checkN[2] <= N[2].DB_MAX_OUTPUT_PORT_TYPE
+checkN[3] <= N[3].DB_MAX_OUTPUT_PORT_TYPE
+checkN[4] <= N[4].DB_MAX_OUTPUT_PORT_TYPE
+checkN[5] <= N[5].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |variable_freqdiv|clk_bypass:inst
@@ -48,9 +48,9 @@ CLK_base => inst1.IN0
 
 
 |variable_freqdiv|LPM_COUNTER:div_M
-clock => cntr_ftj:auto_generated.clock
-clk_en => cntr_ftj:auto_generated.clk_en
-cnt_en => cntr_ftj:auto_generated.cnt_en
+clock => cntr_cki:auto_generated.clock
+clk_en => ~NO_FANOUT~
+cnt_en => ~NO_FANOUT~
 updown => ~NO_FANOUT~
 aclr => ~NO_FANOUT~
 aset => ~NO_FANOUT~
@@ -59,13 +59,13 @@ aload => ~NO_FANOUT~
 sclr => ~NO_FANOUT~
 sset => ~NO_FANOUT~
 sconst => ~NO_FANOUT~
-sload => cntr_ftj:auto_generated.sload
-data[0] => cntr_ftj:auto_generated.data[0]
-data[1] => cntr_ftj:auto_generated.data[1]
-data[2] => cntr_ftj:auto_generated.data[2]
-data[3] => cntr_ftj:auto_generated.data[3]
-data[4] => cntr_ftj:auto_generated.data[4]
-data[5] => cntr_ftj:auto_generated.data[5]
+sload => cntr_cki:auto_generated.sload
+data[0] => cntr_cki:auto_generated.data[0]
+data[1] => cntr_cki:auto_generated.data[1]
+data[2] => cntr_cki:auto_generated.data[2]
+data[3] => cntr_cki:auto_generated.data[3]
+data[4] => cntr_cki:auto_generated.data[4]
+data[5] => cntr_cki:auto_generated.data[5]
 cin => ~NO_FANOUT~
 q[0] <= <GND>
 q[1] <= <GND>
@@ -73,7 +73,7 @@ q[2] <= <GND>
 q[3] <= <GND>
 q[4] <= <GND>
 q[5] <= <GND>
-cout <= cntr_ftj:auto_generated.cout
+cout <= cntr_cki:auto_generated.cout
 eq[0] <= <GND>
 eq[1] <= <GND>
 eq[2] <= <GND>
@@ -92,15 +92,13 @@ eq[14] <= <GND>
 eq[15] <= <GND>
 
 
-|variable_freqdiv|LPM_COUNTER:div_M|cntr_ftj:auto_generated
-clk_en => counter_reg_bit[5].IN0
+|variable_freqdiv|LPM_COUNTER:div_M|cntr_cki:auto_generated
 clock => counter_reg_bit[5].CLK
 clock => counter_reg_bit[4].CLK
 clock => counter_reg_bit[3].CLK
 clock => counter_reg_bit[2].CLK
 clock => counter_reg_bit[1].CLK
 clock => counter_reg_bit[0].CLK
-cnt_en => _.IN1
 cout <= cout_actual.DB_MAX_OUTPUT_PORT_TYPE
 data[0] => _.IN1
 data[1] => _.IN1
@@ -110,6 +108,30 @@ data[4] => _.IN1
 data[5] => _.IN1
 sload => _.IN1
 sload => counter_reg_bit[5].IN1
+
+
+|variable_freqdiv|LPM_LATCH:inst4
+data[0] => latches[0].DATAIN
+data[1] => latches[1].DATAIN
+data[2] => latches[2].DATAIN
+data[3] => latches[3].DATAIN
+data[4] => latches[4].DATAIN
+data[5] => latches[5].DATAIN
+gate => latches[5].LATCH_ENABLE
+gate => latches[4].LATCH_ENABLE
+gate => latches[3].LATCH_ENABLE
+gate => latches[2].LATCH_ENABLE
+gate => latches[1].LATCH_ENABLE
+gate => latches[0].LATCH_ENABLE
+aclr => ~NO_FANOUT~
+aset => ~NO_FANOUT~
+aconst => ~NO_FANOUT~
+q[0] <= latches[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= latches[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= latches[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= latches[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= latches[4].DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= latches[5].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |variable_freqdiv|clk_bypass:inst8
@@ -125,9 +147,9 @@ CLK_base => inst1.IN0
 
 
 |variable_freqdiv|LPM_COUNTER:div_M10
-clock => cntr_ftj:auto_generated.clock
-clk_en => cntr_ftj:auto_generated.clk_en
-cnt_en => cntr_ftj:auto_generated.cnt_en
+clock => cntr_cki:auto_generated.clock
+clk_en => ~NO_FANOUT~
+cnt_en => ~NO_FANOUT~
 updown => ~NO_FANOUT~
 aclr => ~NO_FANOUT~
 aset => ~NO_FANOUT~
@@ -136,13 +158,13 @@ aload => ~NO_FANOUT~
 sclr => ~NO_FANOUT~
 sset => ~NO_FANOUT~
 sconst => ~NO_FANOUT~
-sload => cntr_ftj:auto_generated.sload
-data[0] => cntr_ftj:auto_generated.data[0]
-data[1] => cntr_ftj:auto_generated.data[1]
-data[2] => cntr_ftj:auto_generated.data[2]
-data[3] => cntr_ftj:auto_generated.data[3]
-data[4] => cntr_ftj:auto_generated.data[4]
-data[5] => cntr_ftj:auto_generated.data[5]
+sload => cntr_cki:auto_generated.sload
+data[0] => cntr_cki:auto_generated.data[0]
+data[1] => cntr_cki:auto_generated.data[1]
+data[2] => cntr_cki:auto_generated.data[2]
+data[3] => cntr_cki:auto_generated.data[3]
+data[4] => cntr_cki:auto_generated.data[4]
+data[5] => cntr_cki:auto_generated.data[5]
 cin => ~NO_FANOUT~
 q[0] <= <GND>
 q[1] <= <GND>
@@ -150,7 +172,7 @@ q[2] <= <GND>
 q[3] <= <GND>
 q[4] <= <GND>
 q[5] <= <GND>
-cout <= cntr_ftj:auto_generated.cout
+cout <= cntr_cki:auto_generated.cout
 eq[0] <= <GND>
 eq[1] <= <GND>
 eq[2] <= <GND>
@@ -169,15 +191,13 @@ eq[14] <= <GND>
 eq[15] <= <GND>
 
 
-|variable_freqdiv|LPM_COUNTER:div_M10|cntr_ftj:auto_generated
-clk_en => counter_reg_bit[5].IN0
+|variable_freqdiv|LPM_COUNTER:div_M10|cntr_cki:auto_generated
 clock => counter_reg_bit[5].CLK
 clock => counter_reg_bit[4].CLK
 clock => counter_reg_bit[3].CLK
 clock => counter_reg_bit[2].CLK
 clock => counter_reg_bit[1].CLK
 clock => counter_reg_bit[0].CLK
-cnt_en => _.IN1
 cout <= cout_actual.DB_MAX_OUTPUT_PORT_TYPE
 data[0] => _.IN1
 data[1] => _.IN1
@@ -187,5 +207,29 @@ data[4] => _.IN1
 data[5] => _.IN1
 sload => _.IN1
 sload => counter_reg_bit[5].IN1
+
+
+|variable_freqdiv|LPM_LATCH:inst5
+data[0] => latches[0].DATAIN
+data[1] => latches[1].DATAIN
+data[2] => latches[2].DATAIN
+data[3] => latches[3].DATAIN
+data[4] => latches[4].DATAIN
+data[5] => latches[5].DATAIN
+gate => latches[5].LATCH_ENABLE
+gate => latches[4].LATCH_ENABLE
+gate => latches[3].LATCH_ENABLE
+gate => latches[2].LATCH_ENABLE
+gate => latches[1].LATCH_ENABLE
+gate => latches[0].LATCH_ENABLE
+aclr => ~NO_FANOUT~
+aset => ~NO_FANOUT~
+aconst => ~NO_FANOUT~
+q[0] <= latches[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= latches[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= latches[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= latches[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= latches[4].DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= latches[5].DB_MAX_OUTPUT_PORT_TYPE
 
 

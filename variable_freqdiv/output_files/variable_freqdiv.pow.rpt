@@ -1,5 +1,5 @@
 Power Analyzer report for variable_freqdiv
-Fri Nov 24 10:07:35 2023
+Sat Nov 25 18:39:42 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -53,7 +53,7 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 20          ;
 ; Maximum allowed            ; 14          ;
 ;                            ;             ;
-; Average used               ; 1.08        ;
+; Average used               ; 1.07        ;
 ; Maximum used               ; 14          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
@@ -65,17 +65,17 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------------+
 ; Power Analyzer Summary                                                                    ;
 +----------------------------------------+--------------------------------------------------+
-; Power Analyzer Status                  ; Successful - Fri Nov 24 10:07:35 2023            ;
+; Power Analyzer Status                  ; Successful - Sat Nov 25 18:39:42 2023            ;
 ; Quartus Prime Version                  ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition      ;
 ; Revision Name                          ; variable_freqdiv                                 ;
 ; Top-level Entity Name                  ; variable_freqdiv                                 ;
 ; Family                                 ; MAX 10                                           ;
 ; Device                                 ; 10M02SCM153C8G                                   ;
 ; Power Models                           ; Final                                            ;
-; Total Thermal Power Dissipation        ; 72.29 mW                                         ;
+; Total Thermal Power Dissipation        ; 72.33 mW                                         ;
 ; Core Dynamic Thermal Power Dissipation ; 0.00 mW                                          ;
 ; Core Static Thermal Power Dissipation  ; 66.79 mW                                         ;
-; I/O Thermal Power Dissipation          ; 5.50 mW                                          ;
+; I/O Thermal Power Dissipation          ; 5.54 mW                                          ;
 ; Power Estimation Confidence            ; Low: user provided insufficient toggle rate data ;
 +----------------------------------------+--------------------------------------------------+
 
@@ -104,27 +104,24 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------+---------+---------------+
 
 
-+------------------------------------------------+
-; Indeterminate Toggle Rates                     ;
-+------------------+-----------------------------+
-; Node             ; Reason                      ;
-+------------------+-----------------------------+
-; CLK              ; No valid clock domain found ;
-; M[5]             ; No valid clock domain found ;
-; M[4]             ; No valid clock domain found ;
-; M[3]             ; No valid clock domain found ;
-; M[2]             ; No valid clock domain found ;
-; M[1]             ; No valid clock domain found ;
-; M[0]             ; No valid clock domain found ;
-; N[5]             ; No valid clock domain found ;
-; N[4]             ; No valid clock domain found ;
-; N[3]             ; No valid clock domain found ;
-; N[2]             ; No valid clock domain found ;
-; N[1]             ; No valid clock domain found ;
-; N[0]             ; No valid clock domain found ;
-; GND              ; No valid clock domain found ;
-; CLK~inputclkctrl ; No valid clock domain found ;
-+------------------+-----------------------------+
++-----------------------------------------------------+
+; Indeterminate Toggle Rates                          ;
++-----------------------+-----------------------------+
+; Node                  ; Reason                      ;
++-----------------------+-----------------------------+
+; CLK_base              ; No valid clock domain found ;
+; M_set                 ; No valid clock domain found ;
+; div_value[5]          ; No valid clock domain found ;
+; div_value[4]          ; No valid clock domain found ;
+; div_value[3]          ; No valid clock domain found ;
+; div_value[2]          ; No valid clock domain found ;
+; div_value[1]          ; No valid clock domain found ;
+; div_value[0]          ; No valid clock domain found ;
+; N_set                 ; No valid clock domain found ;
+; N_set~inputclkctrl    ; No valid clock domain found ;
+; M_set~inputclkctrl    ; No valid clock domain found ;
+; CLK_base~inputclkctrl ; No valid clock domain found ;
++-----------------------+-----------------------------+
 
 
 +--------------------------------------------------------------------------+
@@ -165,7 +162,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------+-----------------------------------+-----------------------------+--------------------------------+-------------------------------+-----------------------------------------------------------+
 ; Combinational cell ; 0.00 mW                           ; 0.00 mW                     ; --                             ; 0.00 mW                       ;    0.000                                                  ;
 ; Register cell      ; 0.00 mW                           ; 0.00 mW                     ; --                             ; 0.00 mW                       ;    0.000                                                  ;
-; I/O                ; 0.09 mW                           ; 0.00 mW                     ; 0.09 mW                        ; 0.00 mW                       ;    0.000                                                  ;
+; I/O                ; 0.12 mW                           ; 0.00 mW                     ; 0.12 mW                        ; 0.00 mW                       ;    0.000                                                  ;
 ; Voltage Regulator  ; 0.00 mW                           ; 0.00 mW                     ; 0.00 mW                        ; --                            ; --                                                        ;
 +--------------------+-----------------------------------+-----------------------------+--------------------------------+-------------------------------+-----------------------------------------------------------+
 (1) The "Block Thermal Static Power" for all block types except Pins and the Voltage Regulator, if one exists, is part of the "Core Static Thermal Power Dissipation" value found on the PowerPlay Power Analyzer-->Summary report panel. The "Core Static Thermal Power Dissipation" also contains the thermal static power dissipated by the routing.
@@ -176,13 +173,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+--------------------------------------+---------------------------------+-----------------------------------+-----------------------------------+---------------------------------------------------------------+
 ; Compilation Hierarchy Node          ; Total Thermal Power by Hierarchy (1) ; Block Thermal Dynamic Power (1) ; Block Thermal Static Power (1)(2) ; Routing Thermal Dynamic Power (1) ; Full Hierarchy Name                                           ;
 +-------------------------------------+--------------------------------------+---------------------------------+-----------------------------------+-----------------------------------+---------------------------------------------------------------+
-; |variable_freqdiv                   ; 0.09 mW (0.09 mW)                    ; 0.00 mW (0.00 mW)               ; 0.09 mW (0.09 mW)                 ; 0.00 mW (0.00 mW)                 ; |variable_freqdiv                                             ;
+; |variable_freqdiv                   ; 0.12 mW (0.12 mW)                    ; 0.00 mW (0.00 mW)               ; 0.12 mW (0.12 mW)                 ; 0.00 mW (0.00 mW)                 ; |variable_freqdiv                                             ;
 ;     |hard_block:auto_generated_inst ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |variable_freqdiv|hard_block:auto_generated_inst              ;
 ;     |lpm_counter:div_M              ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |variable_freqdiv|lpm_counter:div_M                           ;
-;         |cntr_ftj:auto_generated    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |variable_freqdiv|lpm_counter:div_M|cntr_ftj:auto_generated   ;
+;         |cntr_cki:auto_generated    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |variable_freqdiv|lpm_counter:div_M|cntr_cki:auto_generated   ;
 ;     |lpm_counter:div_M10            ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |variable_freqdiv|lpm_counter:div_M10                         ;
-;         |cntr_ftj:auto_generated    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |variable_freqdiv|lpm_counter:div_M10|cntr_ftj:auto_generated ;
+;         |cntr_cki:auto_generated    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |variable_freqdiv|lpm_counter:div_M10|cntr_cki:auto_generated ;
 ;     |clk_bypass:inst                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |variable_freqdiv|clk_bypass:inst                             ;
+;     |lpm_latch:inst4                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |variable_freqdiv|lpm_latch:inst4                             ;
+;     |lpm_latch:inst5                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |variable_freqdiv|lpm_latch:inst5                             ;
 ;     |clk_bypass:inst8               ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |variable_freqdiv|clk_bypass:inst8                            ;
 +-------------------------------------+--------------------------------------+---------------------------------+-----------------------------------+-----------------------------------+---------------------------------------------------------------+
 (1) Value in parentheses is the power consumed at that level of hierarchy. Value not in parentheses is the power consumed at that level of hierarchy plus the power consumed by all levels of hierarchy below it.
@@ -204,7 +203,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------+-------------------------+---------------------------+--------------------------+----------------------------------+
 ; Voltage Supply ; Total Current Drawn (1) ; Dynamic Current Drawn (1) ; Static Current Drawn (1) ; Minimum Power Supply Current (2) ;
 +----------------+-------------------------+---------------------------+--------------------------+----------------------------------+
-; VCCIO          ; 2.22 mA                 ; 0.00 mA                   ; 2.22 mA                  ; 2.22 mA                          ;
+; VCCIO          ; 2.24 mA                 ; 0.00 mA                   ; 2.24 mA                  ; 2.24 mA                          ;
 ; VCCA           ; 0.00 mA                 ; 0.00 mA                   ; 0.00 mA                  ; 0.00 mA                          ;
 ; VCC_ONE        ; 22.26 mA                ; 0.00 mA                   ; 22.26 mA                 ; 22.26 mA                         ;
 +----------------+-------------------------+---------------------------+--------------------------+----------------------------------+
@@ -219,11 +218,11 @@ https://fpgasoftware.intel.com/eula.
 +----------+---------------+---------------------+-----------------------+----------------------+
 ; 1A       ; 2.5V          ; 0.31 mA             ; 0.00 mA               ; 0.31 mA              ;
 ; 1B       ; 2.5V          ; 0.32 mA             ; 0.00 mA               ; 0.32 mA              ;
-; 2        ; 2.5V          ; 0.31 mA             ; 0.00 mA               ; 0.31 mA              ;
-; 3        ; 2.5V          ; 0.31 mA             ; 0.00 mA               ; 0.31 mA              ;
-; 5        ; 2.5V          ; 0.33 mA             ; 0.00 mA               ; 0.33 mA              ;
-; 6        ; 2.5V          ; 0.33 mA             ; 0.00 mA               ; 0.33 mA              ;
-; 8        ; 2.5V          ; 0.32 mA             ; 0.00 mA               ; 0.32 mA              ;
+; 2        ; 2.5V          ; 0.33 mA             ; 0.00 mA               ; 0.33 mA              ;
+; 3        ; 2.5V          ; 0.32 mA             ; 0.00 mA               ; 0.32 mA              ;
+; 5        ; 2.5V          ; 0.31 mA             ; 0.00 mA               ; 0.31 mA              ;
+; 6        ; 2.5V          ; 0.31 mA             ; 0.00 mA               ; 0.31 mA              ;
+; 8        ; 2.5V          ; 0.34 mA             ; 0.00 mA               ; 0.34 mA              ;
 +----------+---------------+---------------------+-----------------------+----------------------+
 
 
@@ -232,37 +231,37 @@ https://fpgasoftware.intel.com/eula.
 +---------------+-------------------------+---------------------------+--------------------------+----------------------------------+
 ; VCCIO Voltage ; Total Current Drawn (1) ; Dynamic Current Drawn (1) ; Static Current Drawn (1) ; Minimum Power Supply Current (2) ;
 +---------------+-------------------------+---------------------------+--------------------------+----------------------------------+
-; 2.5V          ; 2.22 mA                 ; 0.00 mA                   ; 2.22 mA                  ; 2.22 mA                          ;
+; 2.5V          ; 2.24 mA                 ; 0.00 mA                   ; 2.24 mA                  ; 2.24 mA                          ;
 +---------------+-------------------------+---------------------------+--------------------------+----------------------------------+
 (1) Currents reported in columns "Total Current Drawn", "Dynamic Current Drawn", and "Static Current Drawn" are sufficient for user operation of the device.  
 (2) Currents reported in column "Minimum Power Supply Current" are sufficient for power-up, configuration, and user operation of the device.
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Confidence Metric Details                                                                                                                      ;
-+----------------------------------------------------------------------------------------+------------+------------+-------------+---------------+
-; Data Source                                                                            ; Total      ; Pin        ; Registered  ; Combinational ;
-+----------------------------------------------------------------------------------------+------------+------------+-------------+---------------+
-; Simulation (from file)                                                                 ;            ;            ;             ;               ;
-;     -- Number of signals with Toggle Rate from Simulation                              ; 0 (0.0%)   ; 0 (0.0%)   ; 0 (0.0%)    ; 0 (0.0%)      ;
-;     -- Number of signals with Static Probability from Simulation                       ; 0 (0.0%)   ; 0 (0.0%)   ; 0 (0.0%)    ; 0 (0.0%)      ;
-;                                                                                        ;            ;            ;             ;               ;
-; Node, entity or clock assignment                                                       ;            ;            ;             ;               ;
-;     -- Number of signals with Toggle Rate from Node, entity or clock assignment        ; 0 (0.0%)   ; 0 (0.0%)   ; 0 (0.0%)    ; 0 (0.0%)      ;
-;     -- Number of signals with Static Probability from Node, entity or clock assignment ; 1 (1.1%)   ; 0 (0.0%)   ; 0 (0.0%)    ; 1 (2.0%)      ;
-;                                                                                        ;            ;            ;             ;               ;
-; Vectorless estimation                                                                  ;            ;            ;             ;               ;
-;     -- Number of signals with Toggle Rate from Vectorless estimation                   ; 66 (75.9%) ; 3 (12.5%)  ; 12 (100.0%) ; 51 (100.0%)   ;
-;     -- Number of signals with Zero toggle rate, from Vectorless estimation             ; 22 (25.3%) ; 1 (4.2%)   ; 0 (0.0%)    ; 21 (41.2%)    ;
-;     -- Number of signals with Static Probability from Vectorless estimation            ; 65 (74.7%) ; 3 (12.5%)  ; 12 (100.0%) ; 50 (98.0%)    ;
-;                                                                                        ;            ;            ;             ;               ;
-; Default assignment                                                                     ;            ;            ;             ;               ;
-;     -- Number of signals with Toggle Rate from Default assignment                      ; 0 (0.0%)   ; 0 (0.0%)   ; 0 (0.0%)    ; 0 (0.0%)      ;
-;     -- Number of signals with Static Probability from Default assignment               ; 21 (24.1%) ; 21 (87.5%) ; 0 (0.0%)    ; 0 (0.0%)      ;
-;                                                                                        ;            ;            ;             ;               ;
-; Assumed 0                                                                              ;            ;            ;             ;               ;
-;     -- Number of signals with Toggle Rate assumed 0                                    ; 21 (24.1%) ; 21 (87.5%) ; 0 (0.0%)    ; 0 (0.0%)      ;
-+----------------------------------------------------------------------------------------+------------+------------+-------------+---------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Confidence Metric Details                                                                                                                       ;
++----------------------------------------------------------------------------------------+-------------+------------+-------------+---------------+
+; Data Source                                                                            ; Total       ; Pin        ; Registered  ; Combinational ;
++----------------------------------------------------------------------------------------+-------------+------------+-------------+---------------+
+; Simulation (from file)                                                                 ;             ;            ;             ;               ;
+;     -- Number of signals with Toggle Rate from Simulation                              ; 0 (0.0%)    ; 0 (0.0%)   ; 0 (0.0%)    ; 0 (0.0%)      ;
+;     -- Number of signals with Static Probability from Simulation                       ; 0 (0.0%)    ; 0 (0.0%)   ; 0 (0.0%)    ; 0 (0.0%)      ;
+;                                                                                        ;             ;            ;             ;               ;
+; Node, entity or clock assignment                                                       ;             ;            ;             ;               ;
+;     -- Number of signals with Toggle Rate from Node, entity or clock assignment        ; 0 (0.0%)    ; 0 (0.0%)   ; 0 (0.0%)    ; 0 (0.0%)      ;
+;     -- Number of signals with Static Probability from Node, entity or clock assignment ; 3 (2.6%)    ; 0 (0.0%)   ; 0 (0.0%)    ; 3 (4.1%)      ;
+;                                                                                        ;             ;            ;             ;               ;
+; Vectorless estimation                                                                  ;             ;            ;             ;               ;
+;     -- Number of signals with Toggle Rate from Vectorless estimation                   ; 101 (86.3%) ; 15 (48.4%) ; 12 (100.0%) ; 74 (100.0%)   ;
+;     -- Number of signals with Zero toggle rate, from Vectorless estimation             ; 15 (12.8%)  ; 1 (3.2%)   ; 0 (0.0%)    ; 14 (18.9%)    ;
+;     -- Number of signals with Static Probability from Vectorless estimation            ; 98 (83.8%)  ; 15 (48.4%) ; 12 (100.0%) ; 71 (95.9%)    ;
+;                                                                                        ;             ;            ;             ;               ;
+; Default assignment                                                                     ;             ;            ;             ;               ;
+;     -- Number of signals with Toggle Rate from Default assignment                      ; 0 (0.0%)    ; 0 (0.0%)   ; 0 (0.0%)    ; 0 (0.0%)      ;
+;     -- Number of signals with Static Probability from Default assignment               ; 16 (13.7%)  ; 16 (51.6%) ; 0 (0.0%)    ; 0 (0.0%)      ;
+;                                                                                        ;             ;            ;             ;               ;
+; Assumed 0                                                                              ;             ;            ;             ;               ;
+;     -- Number of signals with Toggle Rate assumed 0                                    ; 16 (13.7%)  ; 16 (51.6%) ; 0 (0.0%)    ; 0 (0.0%)      ;
++----------------------------------------------------------------------------------------+-------------+------------+-------------+---------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------+
@@ -279,14 +278,19 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Power Analyzer
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Fri Nov 24 10:07:34 2023
+    Info: Processing started: Sat Nov 25 18:39:41 2023
 Info: Command: quartus_pow --read_settings_files=off --write_settings_files=off variable_freqdiv -c variable_freqdiv
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
+Warning (335093): The Timing Analyzer is analyzing 12 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'variable_freqdiv.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
-Warning (332060): Node: CLK was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register lpm_counter:div_M|cntr_ftj:auto_generated|counter_reg_bit[5] is being clocked by CLK
+Warning (332060): Node: CLK_base was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register lpm_counter:div_M|cntr_cki:auto_generated|counter_reg_bit[5] is being clocked by CLK_base
+Warning (332060): Node: N_set was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Latch lpm_latch:inst5|latches[5] is being clocked by N_set
+Warning (332060): Node: M_set was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Latch lpm_latch:inst4|latches[0] is being clocked by M_set
 Warning (332068): No clocks defined in design.
 Info (223000): Starting Vectorless Power Activity Estimation
 Warning (222013): Relative toggle rates could not be calculated because no clock domain could be identified for some nodes
@@ -296,10 +300,10 @@ Warning (215044): No board thermal model was selected.  Analyzing without board 
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (215049): Average toggle rate for this design is 0.000 millions of transitions / sec
-Info (215031): Total thermal power estimate for the design is 72.29 mW
-Info: Quartus Prime Power Analyzer was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4912 megabytes
-    Info: Processing ended: Fri Nov 24 10:07:35 2023
+Info (215031): Total thermal power estimate for the design is 72.33 mW
+Info: Quartus Prime Power Analyzer was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 4913 megabytes
+    Info: Processing ended: Sat Nov 25 18:39:42 2023
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

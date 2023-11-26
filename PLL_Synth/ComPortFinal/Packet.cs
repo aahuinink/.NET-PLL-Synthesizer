@@ -15,40 +15,72 @@ namespace ComPortFinal
 
     internal class Packet
     {
-        private int _length;
-        private string _header;
-        private int _number;
-        private string _message;
+        // basic packet: "###{NUM[2..0]}{KEYVAL[3..0]}{CHXUM[2..0]}\r\n"
+        private int _expLength;     // the expected packet length
+        private string _expHeader;  // the expected packet header
+        private int _expPayloadLength; // the expected payload length in bytes
+        private bool _numberFlag;   // flags if the packet has an identification number
+        private int _length;        // the length of the packet
+        private string _header;     // the packet header
+        private int _number;        // the packet number
+        private string _message;    // the packet payload
         private double[] _analogValues = new double[5];
-        private int _checksum;
+        private int _checksum;      // the packet checksum
 
         public int Length { get => _length; set => _length = value; }
         public string Header { get => _header; set => _header = value; }
         public int Number { get => _number; set => _number = value; }
-        public string Message
-        {
-            get => _message;
-            set
-            {
-                _message = value;
-
-                for (byte i = 0; i < 5; i++)
-                {
-                    _analogValues[i] += Convert.ToDouble(value.Substring(i * 4, 4));
-                    i++;
-                }
-            }
-        }
+        public string Message { get => _message; set => _message = value; }
         public int Checksum { get => _checksum; set => _checksum = value; }
+
         /// <summary>
         /// The analog values from the
         /// </summary>
         public double[] AnalogValues { get => _analogValues; }
 
         /// <summary>
-        /// Packet constructor
+        /// Default packet constructor (length = 37, header = "###")
         /// </summary>
-        public Packet() { }
+        public Packet() 
+        {
+            _expLength = 37;
+            _expPayloadLength = 28;
+
+            _expHeader = "###";
+        }
+
+        public Packet(int expPayloadLength, bool numberFlag)
+        {
+            _expLength = (numberFlag) ? expPayloadLength + 9 : expPayloadLength + 6;
+            _expPayloadLength = expPayloadLength;
+            _numberFlag = numberFlag;
+            _expHeader = "###";
+        }
+
+        /// <summary>
+        /// Construct a packet object with a non-default header.
+        /// </summary>
+        /// <param name="expHeader">The expected packet header (Default: "###")</param>
+        public Packet(string expHeader)
+        {
+            _expLength = 36;
+            _expPayloadLength = 28;
+            _expHeader = expHeader;
+        }
+
+        /// <summary>
+        /// Construct a packet object with a non-default header and length
+        /// </summary>
+        /// <param name="expPacketLength">The expected packet length</param>
+        /// <param name="expHeader">The expected header<param>
+        /// <param name="expPayloadLength">The expected payload message length</param>
+        public Packet(int expPayloadLength, string expHeader, bool  numberFlag)
+        {
+            _expLength = expPayloadLength + expHeader.Length + 6;
+            _expLength = numberFlag ? _expLength : _expLength - 3;
+            _expPayloadLength= expPayloadLength;
+            _expHeader = expHeader;
+        }
 
         /// <summary>
         /// Parses a string into a packet object and handles error checking
@@ -59,42 +91,54 @@ namespace ComPortFinal
         public List<PacketError> TryRXParse(string recieved)
         {
             List<PacketError> errors = new List<PacketError>(); // create a new list of errors to hold any errors thrown
-            recieved = recieved.TrimEnd('\r');
+            recieved = recieved.TrimEnd('\r').TrimEnd('\n');
             Length = recieved.Length;
+
             // check length
-            if (Length != 37)
+            if (Length != _expLength)
             {
                 errors.Add(PacketError.LengthError);
             }
 
             // pop and check header
-            Header = recieved.Substring(0, 3);
-            recieved = recieved.Substring(3);
+            Header = recieved.Substring(0, _expHeader.Length);
+            recieved = recieved.Substring(_expHeader.Length);
 
-            if (Header != "###")
+            if (Header != _expHeader)
             {
                 errors.Add(PacketError.HeaderError);
             }
 
             // calculate checksum
             int chx = 0;
-            for (int i = 0; i < Length - 6; i++)
+            if (_numberFlag)
             {
-                chx += (byte)recieved[i];
-            }
-            chx %= 1000; // take last three digits
+                for (int i = 0; i < _expPayloadLength + 3; i++)
+                {
+                    chx += (byte)recieved[i];
+                }
 
-            // pop packet number
-            if (!int.TryParse(recieved.Substring(0, 3), out _number))
+                // pop packet number
+                if (!int.TryParse(recieved.Substring(0, 3), out _number))
+                {
+                    errors.Add(PacketError.NumberError);
+                }
+
+                recieved = recieved.Substring(3);
+
+            } else
             {
-                errors.Add(PacketError.NumberError);
+                for (int i = 0; i < _expPayloadLength; i++)
+                {
+                    chx += (byte)recieved[i];
+                }
             }
-
-            recieved = recieved.Substring(3);
+            
+            chx %= 1000; // take last three digits of chxum
 
             // pop message
-            Message = recieved.Substring(0, 28);
-            recieved = recieved.Substring(recieved.Length - 4);
+            Message = recieved.Substring(0, _expPayloadLength);
+            recieved = recieved.Substring(_expPayloadLength);
 
             // check recieved checksum
             int recChx;
@@ -123,7 +167,7 @@ namespace ComPortFinal
             }
 
             // create packet string
-            string packetString = "###" + payload + chx.ToString() + "\r\n";
+            string packetString = _expHeader + payload + chx.ToString() + "\r\n";
 
             // put packetString into txBuffer
             byte[] txBuffer = Encoding.UTF8.GetBytes(packetString);

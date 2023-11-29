@@ -1,12 +1,12 @@
-Power Analyzer Status : Successful - Sat Nov 25 18:39:42 2023
+Power Analyzer Status : Successful - Wed Nov 29 12:28:28 2023
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : variable_freqdiv
 Top-level Entity Name : variable_freqdiv
 Family : MAX 10
 Device : 10M02SCM153C8G
 Power Models : Final
-Total Thermal Power Dissipation : 72.33 mW
+Total Thermal Power Dissipation : 72.28 mW
 Core Dynamic Thermal Power Dissipation : 0.00 mW
 Core Static Thermal Power Dissipation : 66.79 mW
-I/O Thermal Power Dissipation : 5.54 mW
+I/O Thermal Power Dissipation : 5.49 mW
 Power Estimation Confidence : Low: user provided insufficient toggle rate data

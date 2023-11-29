@@ -12,54 +12,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "checkM[5]",
-					"strict" : false
-				},
-				{
-					"name" : "checkM[4]",
-					"strict" : false
-				},
-				{
-					"name" : "checkM[3]",
-					"strict" : false
-				},
-				{
-					"name" : "checkM[2]",
-					"strict" : false
-				},
-				{
-					"name" : "checkM[1]",
-					"strict" : false
-				},
-				{
-					"name" : "checkM[0]",
-					"strict" : false
-				},
-				{
-					"name" : "checkN[5]",
-					"strict" : false
-				},
-				{
-					"name" : "checkN[4]",
-					"strict" : false
-				},
-				{
-					"name" : "checkN[3]",
-					"strict" : false
-				},
-				{
-					"name" : "checkN[2]",
-					"strict" : false
-				},
-				{
-					"name" : "checkN[1]",
-					"strict" : false
-				},
-				{
-					"name" : "checkN[0]",
-					"strict" : false
-				},
-				{
 					"name" : "CLK_base",
 					"strict" : false
 				},
@@ -89,6 +41,10 @@
 				},
 				{
 					"name" : "div_value[0]",
+					"strict" : false
+				},
+				{
+					"name" : "VCO_in",
 					"strict" : false
 				},
 				{

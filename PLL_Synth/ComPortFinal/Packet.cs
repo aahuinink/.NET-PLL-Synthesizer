@@ -46,7 +46,7 @@ namespace ComPortFinal
             _expLength = 37;
             _expPayloadLength = 28;
 
-            _expHeader = "###";
+            _expHeader = "###".Trim();
         }
 
         public Packet(int expPayloadLength, bool numberFlag)
@@ -54,7 +54,7 @@ namespace ComPortFinal
             _expLength = (numberFlag) ? expPayloadLength + 9 : expPayloadLength + 6;
             _expPayloadLength = expPayloadLength;
             _numberFlag = numberFlag;
-            _expHeader = "###";
+            _expHeader = "###".Trim();
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace ComPortFinal
         {
             _expLength = 36;
             _expPayloadLength = 28;
-            _expHeader = expHeader;
+            _expHeader = expHeader.Trim();
         }
 
         /// <summary>
@@ -79,7 +79,17 @@ namespace ComPortFinal
             _expLength = expPayloadLength + expHeader.Length + 6;
             _expLength = numberFlag ? _expLength : _expLength - 3;
             _expPayloadLength= expPayloadLength;
-            _expHeader = expHeader;
+            _expHeader = expHeader.Trim();
+        }
+
+        public Packet(string payload, bool numberFlag)
+        {
+            _payload = payload.Trim();
+            _numberFlag = numberFlag;
+            _expPayloadLength = _payload.Length;
+            _expHeader = "###".Trim();
+            _expLength = _expPayloadLength + 9;
+            _expLength = numberFlag ? _expLength : _expLength - 3;
         }
 
         /// <summary>

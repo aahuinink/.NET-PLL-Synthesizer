@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Sat Nov 25 18:39:34 2023
+Analysis & Synthesis Status : Successful - Wed Nov 29 12:28:21 2023
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : variable_freqdiv
 Top-level Entity Name : variable_freqdiv
 Family : MAX 10
-Total logic elements : 34
-    Total combinational functions : 34
-    Dedicated logic registers : 12
-Total registers : 12
-Total pins : 23
+Total logic elements : 41
+    Total combinational functions : 41
+    Dedicated logic registers : 18
+Total registers : 18
+Total pins : 12
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

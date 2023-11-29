@@ -101,7 +101,9 @@ namespace ComPortFinal
 
             Pulse(M_set);
 
-            Packet ack = new Packet(4, false);
+            Packet ack = new Packet("recv OK", false);
+
+            ack.Send
 
             return;
         }

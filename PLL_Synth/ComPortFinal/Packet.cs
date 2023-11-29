@@ -81,7 +81,11 @@ namespace ComPortFinal
             _expPayloadLength= expPayloadLength;
             _expHeader = expHeader.Trim();
         }
-
+        /// <summary>
+        /// Creates a packet from a string using the default header
+        /// </summary>
+        /// <param name="payload">The payload string</param>
+        /// <param name="numberFlag">If it needs a packet number</param>
         public Packet(string payload, bool numberFlag)
         {
             _payload = payload.Trim();
@@ -186,6 +190,41 @@ namespace ComPortFinal
 
             // create packet string
             string packetString = _expHeader + payload + chx.ToString() + "\r\n";
+
+            // put packetString into txBuffer
+            byte[] txBuffer = Encoding.UTF8.GetBytes(packetString);
+            // send txBuffer
+            serialPort.Write(txBuffer, 0, txBuffer.Length);
+            return;
+        }
+
+        /// <summary>
+        /// Sends the packet payload, whatever it is
+        /// </summary>
+        /// <param name="serialPort"></param>
+        public void Send(SerialPort serialPort)
+        {
+            int chx = 0;                    // checksum variable
+
+            // convert payload to bytes to calculate checksum
+            byte[] payloadByte = Encoding.UTF8.GetBytes(Payload);
+            try
+            {
+                // calculate checksum
+                for (int i = 0; i < _expPayloadLength; i++)
+                {
+                    chx += payloadByte[i];
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                return;
+            }
+
+
+            // create packet string
+            string packetString = Header + Payload + chx.ToString() + "\r\n";
 
             // put packetString into txBuffer
             byte[] txBuffer = Encoding.UTF8.GetBytes(packetString);

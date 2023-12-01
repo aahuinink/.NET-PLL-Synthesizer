@@ -12,6 +12,8 @@ namespace SynthGUI
         {
             InitializeComponent();
             Loaded += MainPage_Loaded;
+
+            serialPort.DataReceived += SerialPort_DataReceived;
         }
 
         private void MainPage_Loaded(object sender, EventArgs e)
@@ -27,17 +29,16 @@ namespace SynthGUI
 
         private void entryInput_Completed(object sender, EventArgs e)
         {
-            Packet packet = new Packet(expPayloadLength: 4, numberFlag: false);
-
             string input = ((Entry)sender).Text.TrimEnd('\r', '\n');
-
+            Packet packet = new Packet(input, false);
+            output.Text = ($"Length: {packet.Length}\n{packet.Header}{packet.Payload}{packet.Checksum}");
             try
             {
-                packet.Send(input, serialPort);
+                packet.Send(serialPort);
             }
-            catch
+            catch (Exception ex)
             {
-                DisplayAlert("ALERT", "COM port not open", "OK");
+                output.Text = ex.ToString();
             }
         }
 
@@ -48,6 +49,17 @@ namespace SynthGUI
             serialPort.BaudRate = 115200;
             serialPort.Parity = Parity.None;
             serialPort.Open();
+            output.Text = "COM opened";
+        }
+
+        private void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            Packet inPacket = new Packet(expPayloadLength: "recv OK".Length, false);
+            byte[] response = new byte[inPacket.ExpLength];
+            serialPort.Read(response, 0, inPacket.ExpLength);
+            string recieved = response.ToString();
+            output.Text = recieved;
+            return;
         }
     }
 }

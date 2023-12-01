@@ -52,8 +52,7 @@ namespace ComPortFinal
 
             // TODO: init digital output pins here  
 
-            serialPort = Device.PlatformOS.GetSerialPortName("COM1")
-                                .CreateSerialPort(baudRate: 115200);
+            serialPort = Device.PlatformOS.GetSerialPortName("COM1").CreateSerialPort(baudRate: 115200);
             serialPort.Open();
             serialPort.DataReceived += SerialPort_DataReceived;
 
@@ -69,7 +68,7 @@ namespace ComPortFinal
 
             // total length: 3 wide header, 4 wide payload, no packet number, 3 wide chxum, cr + nl = 12
             byte[] response = new byte[12];
-            serialPort.Read(response, 0, 12);
+            serialPort.Read(response, 0, packet.ExpLength);
             string recieved = response.ToString();
 
             // parse into packet object
@@ -78,13 +77,21 @@ namespace ComPortFinal
             // check for errors
             if (errors.Count > 0)
             {
+                Packet errPacket = new Packet("Error", false);
+                errPacket.Send(serialPort);
                 //foreach ( PacketError error in errors)
                 //{
                 //    errorChecker.Handle(error);           
                 //}
                 // no need to handle bc the meadow board doesn't care about keeping track of errors right now
+
+                IDigitalOutputPort redLed = Device.CreateDigitalOutputPort(Device.Pins.OnboardLedRed);
+                redLed.State = true;
                 return;
             }
+
+            IDigitalOutputPort greenLed = Device.CreateDigitalOutputPort(Device.Pins.OnboardLedGreen);
+            greenLed.State = true;
 
             FreqRatio freqRatio = new FreqRatio();
 
@@ -103,7 +110,7 @@ namespace ComPortFinal
 
             Packet ack = new Packet("recv OK", false);
 
-            ack.Send
+            ack.Send(serialPort);
 
             return;
         }

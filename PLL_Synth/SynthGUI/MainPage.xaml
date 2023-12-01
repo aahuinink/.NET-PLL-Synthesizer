@@ -25,6 +25,10 @@
                    Margin="10"
                    Completed="entryInput_Completed"
                    HeightRequest="20"/>
+            <Label x:Name="output"
+                   Text=""
+                   Margin="10"
+                   HeightRequest="50"/>
         </HorizontalStackLayout>
     </ScrollView>
 

@@ -92,7 +92,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 192 592 360 608)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "VCO_in" (rect 5 0 43 12)(font "Arial" ))
+	(text "VCO_in" (rect 5 0 42 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -140,7 +140,7 @@ https://fpgasoftware.intel.com/eula.
 	(annotation_block (location)(rect 1384 664 1440 688))
 )
 (symbol
-	(rect 1000 376 1144 472)
+	(rect 1040 376 1184 472)
 	(text "clk_bypass" (rect 5 0 71 19)(font "Intel Clear" (font_size 8)))
 	(text "inst" (rect 8 75 24 92)(font "Intel Clear" ))
 	(port
@@ -598,7 +598,7 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 16 96)(pt 16 16))
 		(line (pt 96 96)(pt 96 16))
 	)
-	(annotation_block (parameter)(rect 536 384 673 441))
+	(annotation_block (parameter)(rect 512 448 649 505))
 )
 (symbol
 	(rect 528 600 640 712)
@@ -861,14 +861,14 @@ https://fpgasoftware.intel.com/eula.
 	)
 	(parameter
 		"LPM_MODULUS"
-		"40000"
+		"4000000"
 		"Optional counter wrap value"
 	)
 	(parameter
 		"LPM_DIRECTION"
-		"UP"
+		"DEFAULT"
 		"Selects between up/down, up, or down (\"DEFAULT\" \"UP\" \"DOWN\")"
-		(type "PARAMETER_STRING")	)
+		(type "PARAMETER_UNKNOWN")	)
 	(parameter
 		"LPM_WIDTH"
 		"6"
@@ -887,25 +887,11 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 16 136)(pt 24 128))
 		(line (pt 24 128)(pt 16 120))
 	)
-	(annotation_block (parameter)(rect 432 72 623 205))
-)
-(connector
-	(text "M[5..0]" (rect 970 408 1003 425)(font "Intel Clear" ))
-	(pt 1000 424)
-	(pt 960 424)
-	(bus)
+	(annotation_block (parameter)(rect 432 72 632 205))
 )
 (connector
 	(pt 920 408)
 	(pt 920 280)
-)
-(connector
-	(pt 960 440)
-	(pt 960 448)
-)
-(connector
-	(pt 1144 408)
-	(pt 1208 408)
 )
 (connector
 	(pt 760 688)
@@ -944,16 +930,6 @@ https://fpgasoftware.intel.com/eula.
 (connector
 	(pt 672 480)
 	(pt 672 456)
-)
-(connector
-	(text "CLK_base" (rect 970 424 1018 441)(font "Intel Clear" ))
-	(pt 1000 440)
-	(pt 960 440)
-)
-(connector
-	(text "CLK_base" (rect 970 672 1018 689)(font "Intel Clear" ))
-	(pt 1000 688)
-	(pt 960 688)
 )
 (connector
 	(pt 688 624)
@@ -1039,14 +1015,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt 512 656)
 )
 (connector
-	(pt 896 408)
-	(pt 920 408)
-)
-(connector
-	(pt 920 408)
-	(pt 1000 408)
-)
-(connector
 	(text "GND" (rect 674 688 695 705)(font "Intel Clear" ))
 	(pt 664 704)
 	(pt 728 704)
@@ -1110,11 +1078,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt 528 656)
 )
 (connector
-	(text "middleC" (rect 450 224 490 241)(font "Intel Clear" ))
-	(pt 440 240)
-	(pt 560 240)
-)
-(connector
 	(pt 560 240)
 	(pt 560 248)
 )
@@ -1122,11 +1085,6 @@ https://fpgasoftware.intel.com/eula.
 	(text "middleC" (rect 722 408 762 425)(font "Intel Clear" ))
 	(pt 760 424)
 	(pt 712 424)
-)
-(connector
-	(text "CLK_base" (rect 218 240 266 257)(font "Intel Clear" ))
-	(pt 208 256)
-	(pt 304 256)
 )
 (connector
 	(pt 304 272)
@@ -1154,6 +1112,48 @@ https://fpgasoftware.intel.com/eula.
 	(text "VCO_in" (rect 370 584 406 601)(font "Intel Clear" ))
 	(pt 360 600)
 	(pt 424 600)
+)
+(connector
+	(text "VCO_in" (rect 970 672 1006 689)(font "Intel Clear" ))
+	(pt 1000 688)
+	(pt 960 688)
+)
+(connector
+	(text "M[5..0]" (rect 1010 408 1043 425)(font "Intel Clear" ))
+	(pt 1040 424)
+	(pt 1000 424)
+	(bus)
+)
+(connector
+	(pt 1208 408)
+	(pt 1184 408)
+)
+(connector
+	(pt 896 408)
+	(pt 920 408)
+)
+(connector
+	(pt 920 408)
+	(pt 1040 408)
+)
+(connector
+	(pt 960 448)
+	(pt 960 440)
+)
+(connector
+	(text "middleC" (rect 978 424 1018 441)(font "Intel Clear" ))
+	(pt 1040 440)
+	(pt 960 440)
+)
+(connector
+	(text "middleC" (rect 450 224 490 241)(font "Intel Clear" ))
+	(pt 440 240)
+	(pt 560 240)
+)
+(connector
+	(text "<<__$DEF_ALIAS568>>" (rect 218 240 330 257)(font "Intel Clear" )(invisible))
+	(pt 208 256)
+	(pt 304 256)
 )
 (junction (pt 920 408))
 (junction (pt 728 704))

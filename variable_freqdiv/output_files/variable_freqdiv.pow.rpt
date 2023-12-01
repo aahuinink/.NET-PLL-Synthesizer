@@ -1,5 +1,5 @@
 Power Analyzer report for variable_freqdiv
-Wed Nov 29 12:28:28 2023
+Wed Nov 29 16:47:03 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -53,55 +53,57 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 20          ;
 ; Maximum allowed            ; 14          ;
 ;                            ;             ;
-; Average used               ; 1.09        ;
+; Average used               ; 1.12        ;
 ; Maximum used               ; 14          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-14        ;   0.7%      ;
+;     Processors 2-14        ;   0.9%      ;
 +----------------------------+-------------+
 
 
 +-------------------------------------------------------------------------------------------+
 ; Power Analyzer Summary                                                                    ;
 +----------------------------------------+--------------------------------------------------+
-; Power Analyzer Status                  ; Successful - Wed Nov 29 12:28:28 2023            ;
+; Power Analyzer Status                  ; Successful - Wed Nov 29 16:47:03 2023            ;
 ; Quartus Prime Version                  ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition      ;
 ; Revision Name                          ; variable_freqdiv                                 ;
 ; Top-level Entity Name                  ; variable_freqdiv                                 ;
 ; Family                                 ; MAX 10                                           ;
 ; Device                                 ; 10M02SCM153C8G                                   ;
 ; Power Models                           ; Final                                            ;
-; Total Thermal Power Dissipation        ; 72.28 mW                                         ;
+; Total Thermal Power Dissipation        ; 82.96 mW                                         ;
 ; Core Dynamic Thermal Power Dissipation ; 0.00 mW                                          ;
-; Core Static Thermal Power Dissipation  ; 66.79 mW                                         ;
+; Core Static Thermal Power Dissipation  ; 77.47 mW                                         ;
 ; I/O Thermal Power Dissipation          ; 5.49 mW                                          ;
 ; Power Estimation Confidence            ; Low: user provided insufficient toggle rate data ;
 +----------------------------------------+--------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------+
-; Power Analyzer Settings                                                                    ;
-+------------------------------------------------------------------+---------+---------------+
-; Option                                                           ; Setting ; Default Value ;
-+------------------------------------------------------------------+---------+---------------+
-; Use smart compilation                                            ; Off     ; Off           ;
-; Enable parallel Assembler and Timing Analyzer during compilation ; On      ; On            ;
-; Enable compact report table                                      ; Off     ; Off           ;
-; Default Power Toggle Rate                                        ; 12.5%   ; 12.5%         ;
-; Default Power Input I/O Toggle Rate                              ; 12.5%   ; 12.5%         ;
-; Use vectorless estimation                                        ; On      ; On            ;
-; Use Input Files                                                  ; Off     ; Off           ;
-; Filter Glitches in VCD File Reader                               ; On      ; On            ;
-; Power Analyzer Report Signal Activity                            ; Off     ; Off           ;
-; Power Analyzer Report Power Dissipation                          ; Off     ; Off           ;
-; Device Power Characteristics                                     ; TYPICAL ; TYPICAL       ;
-; Automatically Compute Junction Temperature                       ; On      ; On            ;
-; Specified Junction Temperature                                   ; 25      ; 25            ;
-; Ambient Temperature                                              ; 25      ; 25            ;
-; Use Custom Cooling Solution                                      ; Off     ; Off           ;
-; Board Temperature                                                ; 25      ; 25            ;
-+------------------------------------------------------------------+---------+---------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Power Analyzer Settings                                                                                                  ;
++------------------------------------------------------------------+---------------------------------------+---------------+
+; Option                                                           ; Setting                               ; Default Value ;
++------------------------------------------------------------------+---------------------------------------+---------------+
+; Use smart compilation                                            ; Off                                   ; Off           ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                                    ; On            ;
+; Enable compact report table                                      ; Off                                   ; Off           ;
+; Default Power Input I/O Toggle Rate                              ; 12.5%                                 ; 12.5%         ;
+; Preset Cooling Solution                                          ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ;               ;
+; Board thermal model                                              ; None (CONSERVATIVE)                   ;               ;
+; Default Power Toggle Rate                                        ; 12.5%                                 ; 12.5%         ;
+; Use vectorless estimation                                        ; On                                    ; On            ;
+; Use Input Files                                                  ; Off                                   ; Off           ;
+; Filter Glitches in VCD File Reader                               ; On                                    ; On            ;
+; Power Analyzer Report Signal Activity                            ; Off                                   ; Off           ;
+; Power Analyzer Report Power Dissipation                          ; Off                                   ; Off           ;
+; Device Power Characteristics                                     ; TYPICAL                               ; TYPICAL       ;
+; Automatically Compute Junction Temperature                       ; On                                    ; On            ;
+; Specified Junction Temperature                                   ; 25                                    ; 25            ;
+; Ambient Temperature                                              ; 25                                    ; 25            ;
+; Use Custom Cooling Solution                                      ; Off                                   ; Off           ;
+; Board Temperature                                                ; 25                                    ; 25            ;
++------------------------------------------------------------------+---------------------------------------+---------------+
 
 
 +-------------------------------------------------------------------------------------------------------+
@@ -109,7 +111,8 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------+-----------------------------+
 ; Node                                                                    ; Reason                      ;
 +-------------------------------------------------------------------------+-----------------------------+
-; CLK_base                                                                ; No valid clock domain found ;
+; CLK_base~0                                                              ; No valid clock domain found ;
+; VCO_in                                                                  ; No valid clock domain found ;
 ; M_set                                                                   ; No valid clock domain found ;
 ; div_value[5]                                                            ; No valid clock domain found ;
 ; div_value[4]                                                            ; No valid clock domain found ;
@@ -117,9 +120,10 @@ https://fpgasoftware.intel.com/eula.
 ; div_value[2]                                                            ; No valid clock domain found ;
 ; div_value[1]                                                            ; No valid clock domain found ;
 ; div_value[0]                                                            ; No valid clock domain found ;
-; VCO_in                                                                  ; No valid clock domain found ;
 ; N_set                                                                   ; No valid clock domain found ;
-; lpm_counter:div_M11|cntr_eui:auto_generated|counter_comb_bita5~0clkctrl ; No valid clock domain found ;
+; CLK_base                                                                ; No valid clock domain found ;
+; lpm_counter:div_M11|cntr_ehj:auto_generated|counter_comb_bita5~0clkctrl ; No valid clock domain found ;
+; CLK_base~0clkctrl                                                       ; No valid clock domain found ;
 +-------------------------------------------------------------------------+-----------------------------+
 
 
@@ -136,7 +140,7 @@ https://fpgasoftware.intel.com/eula.
 ;     2.5 V I/O Standard                      ; 2.5 V                      ;
 ;     2.5 V Schmitt Trigger I/O Standard      ; 2.5 V                      ;
 ;                                             ;                            ;
-; Auto computed junction temperature          ; 27.2 degrees Celsius       ;
+; Auto computed junction temperature          ; 27.5 degrees Celsius       ;
 ;     Ambient temperature                     ; 25.0 degrees Celsius       ;
 ;     Junction-to-Case thermal resistance     ; 15.60 degrees Celsius/Watt ;
 ;     Case-to-Heat Sink thermal resistance    ; 0.10 degrees Celsius/Watt  ;
@@ -163,7 +167,7 @@ https://fpgasoftware.intel.com/eula.
 ; Clock control block ; 0.00 mW                           ; 0.00 mW                     ; --                             ; 0.00 mW                       ;    0.000                                                  ;
 ; Register cell       ; 0.00 mW                           ; 0.00 mW                     ; --                             ; 0.00 mW                       ;    0.000                                                  ;
 ; I/O                 ; 0.07 mW                           ; 0.00 mW                     ; 0.07 mW                        ; 0.00 mW                       ;    0.000                                                  ;
-; Voltage Regulator   ; 0.00 mW                           ; 0.00 mW                     ; 0.00 mW                        ; --                            ; --                                                        ;
+; Voltage Regulator   ; 0.87 mW                           ; 0.00 mW                     ; 0.87 mW                        ; --                            ; --                                                        ;
 +---------------------+-----------------------------------+-----------------------------+--------------------------------+-------------------------------+-----------------------------------------------------------+
 (1) The "Block Thermal Static Power" for all block types except Pins and the Voltage Regulator, if one exists, is part of the "Core Static Thermal Power Dissipation" value found on the PowerPlay Power Analyzer-->Summary report panel. The "Core Static Thermal Power Dissipation" also contains the thermal static power dissipated by the routing.
 
@@ -173,14 +177,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+--------------------------------------+---------------------------------+-----------------------------------+-----------------------------------+---------------------------------------------------------------+
 ; Compilation Hierarchy Node          ; Total Thermal Power by Hierarchy (1) ; Block Thermal Dynamic Power (1) ; Block Thermal Static Power (1)(2) ; Routing Thermal Dynamic Power (1) ; Full Hierarchy Name                                           ;
 +-------------------------------------+--------------------------------------+---------------------------------+-----------------------------------+-----------------------------------+---------------------------------------------------------------+
-; |variable_freqdiv                   ; 0.07 mW (0.07 mW)                    ; 0.00 mW (0.00 mW)               ; 0.07 mW (0.07 mW)                 ; 0.00 mW (0.00 mW)                 ; |variable_freqdiv                                             ;
+; |variable_freqdiv                   ; 0.94 mW (0.94 mW)                    ; 0.00 mW (0.00 mW)               ; 0.94 mW (0.94 mW)                 ; 0.00 mW (0.00 mW)                 ; |variable_freqdiv                                             ;
 ;     |hard_block:auto_generated_inst ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |variable_freqdiv|hard_block:auto_generated_inst              ;
 ;     |lpm_counter:div_M              ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |variable_freqdiv|lpm_counter:div_M                           ;
 ;         |cntr_cki:auto_generated    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |variable_freqdiv|lpm_counter:div_M|cntr_cki:auto_generated   ;
 ;     |lpm_counter:div_M10            ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |variable_freqdiv|lpm_counter:div_M10                         ;
 ;         |cntr_cki:auto_generated    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |variable_freqdiv|lpm_counter:div_M10|cntr_cki:auto_generated ;
 ;     |lpm_counter:div_M11            ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |variable_freqdiv|lpm_counter:div_M11                         ;
-;         |cntr_eui:auto_generated    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |variable_freqdiv|lpm_counter:div_M11|cntr_eui:auto_generated ;
+;         |cntr_ehj:auto_generated    ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |variable_freqdiv|lpm_counter:div_M11|cntr_ehj:auto_generated ;
 ;     |clk_bypass:inst                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |variable_freqdiv|clk_bypass:inst                             ;
 ;     |lpm_latch:inst4                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |variable_freqdiv|lpm_latch:inst4                             ;
 ;     |lpm_latch:inst5                ; 0.00 mW (0.00 mW)                    ; 0.00 mW (0.00 mW)               ; --                                ; 0.00 mW (0.00 mW)                 ; |variable_freqdiv|lpm_latch:inst5                             ;
@@ -206,8 +210,8 @@ https://fpgasoftware.intel.com/eula.
 ; Voltage Supply ; Total Current Drawn (1) ; Dynamic Current Drawn (1) ; Static Current Drawn (1) ; Minimum Power Supply Current (2) ;
 +----------------+-------------------------+---------------------------+--------------------------+----------------------------------+
 ; VCCIO          ; 2.21 mA                 ; 0.00 mA                   ; 2.21 mA                  ; 2.21 mA                          ;
-; VCCA           ; 0.00 mA                 ; 0.00 mA                   ; 0.00 mA                  ; 0.00 mA                          ;
-; VCC_ONE        ; 22.26 mA                ; 0.00 mA                   ; 22.26 mA                 ; 22.26 mA                         ;
+; VCCA           ; 3.07 mA                 ; 0.00 mA                   ; 3.07 mA                  ; 3.07 mA                          ;
+; VCC_ONE        ; 22.75 mA                ; 0.00 mA                   ; 22.75 mA                 ; 22.75 mA                         ;
 +----------------+-------------------------+---------------------------+--------------------------+----------------------------------+
 (1) Currents reported in columns "Total Current Drawn", "Dynamic Current Drawn", and "Static Current Drawn" are sufficient for user operation of the device.  
 (2) Currents reported in column "Minimum Power Supply Current" are sufficient for power-up, configuration, and user operation of the device.
@@ -250,19 +254,19 @@ https://fpgasoftware.intel.com/eula.
 ;                                                                                        ;            ;            ;             ;               ;
 ; Node, entity or clock assignment                                                       ;            ;            ;             ;               ;
 ;     -- Number of signals with Toggle Rate from Node, entity or clock assignment        ; 0 (0.0%)   ; 0 (0.0%)   ; 0 (0.0%)    ; 0 (0.0%)      ;
-;     -- Number of signals with Static Probability from Node, entity or clock assignment ; 1 (0.9%)   ; 0 (0.0%)   ; 0 (0.0%)    ; 1 (1.3%)      ;
+;     -- Number of signals with Static Probability from Node, entity or clock assignment ; 2 (1.7%)   ; 0 (0.0%)   ; 0 (0.0%)    ; 2 (2.6%)      ;
 ;                                                                                        ;            ;            ;             ;               ;
 ; Vectorless estimation                                                                  ;            ;            ;             ;               ;
-;     -- Number of signals with Toggle Rate from Vectorless estimation                   ; 97 (85.1%) ; 3 (15.0%)  ; 18 (100.0%) ; 76 (100.0%)   ;
-;     -- Number of signals with Zero toggle rate, from Vectorless estimation             ; 13 (11.4%) ; 1 (5.0%)   ; 0 (0.0%)    ; 12 (15.8%)    ;
-;     -- Number of signals with Static Probability from Vectorless estimation            ; 96 (84.2%) ; 3 (15.0%)  ; 18 (100.0%) ; 75 (98.7%)    ;
+;     -- Number of signals with Toggle Rate from Vectorless estimation                   ; 97 (84.3%) ; 3 (15.0%)  ; 18 (100.0%) ; 76 (98.7%)    ;
+;     -- Number of signals with Zero toggle rate, from Vectorless estimation             ; 15 (13.0%) ; 1 (5.0%)   ; 0 (0.0%)    ; 14 (18.2%)    ;
+;     -- Number of signals with Static Probability from Vectorless estimation            ; 95 (82.6%) ; 3 (15.0%)  ; 18 (100.0%) ; 74 (96.1%)    ;
 ;                                                                                        ;            ;            ;             ;               ;
 ; Default assignment                                                                     ;            ;            ;             ;               ;
 ;     -- Number of signals with Toggle Rate from Default assignment                      ; 0 (0.0%)   ; 0 (0.0%)   ; 0 (0.0%)    ; 0 (0.0%)      ;
-;     -- Number of signals with Static Probability from Default assignment               ; 17 (14.9%) ; 17 (85.0%) ; 0 (0.0%)    ; 0 (0.0%)      ;
+;     -- Number of signals with Static Probability from Default assignment               ; 18 (15.7%) ; 17 (85.0%) ; 0 (0.0%)    ; 1 (1.3%)      ;
 ;                                                                                        ;            ;            ;             ;               ;
 ; Assumed 0                                                                              ;            ;            ;             ;               ;
-;     -- Number of signals with Toggle Rate assumed 0                                    ; 17 (14.9%) ; 17 (85.0%) ; 0 (0.0%)    ; 0 (0.0%)      ;
+;     -- Number of signals with Toggle Rate assumed 0                                    ; 18 (15.7%) ; 17 (85.0%) ; 0 (0.0%)    ; 1 (1.3%)      ;
 +----------------------------------------------------------------------------------------+------------+------------+-------------+---------------+
 
 
@@ -280,36 +284,37 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Power Analyzer
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Wed Nov 29 12:28:27 2023
+    Info: Processing started: Wed Nov 29 16:47:02 2023
 Info: Command: quartus_pow --read_settings_files=off --write_settings_files=off variable_freqdiv -c variable_freqdiv
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Warning (335093): The Timing Analyzer is analyzing 12 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'variable_freqdiv.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
-Warning (332060): Node: lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register lpm_counter:div_M|cntr_cki:auto_generated|counter_reg_bit[5] is being clocked by lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0]
+Warning (332060): Node: lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] was determined to be a clock but was found without an associated clock assignment.
+    Info (13166): Register lpm_counter:div_M|cntr_cki:auto_generated|counter_reg_bit[5] is being clocked by lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0]
 Warning (332060): Node: N_set was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Latch lpm_latch:inst5|latches[5] is being clocked by N_set
 Warning (332060): Node: CLK_base was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] is being clocked by CLK_base
+    Info (13166): Register lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] is being clocked by CLK_base
 Warning (332060): Node: M_set was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Latch lpm_latch:inst4|latches[0] is being clocked by M_set
 Warning (332060): Node: VCO_in was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register lpm_counter:div_M10|cntr_cki:auto_generated|counter_reg_bit[5] is being clocked by VCO_in
 Warning (332068): No clocks defined in design.
+Warning (332056): PLL cross checking found inconsistent PLL clock settings:
+    Warning (332056): Node: CLK_base~0|clk[0] was found missing 1 generated clock that corresponds to a base clock with a period of: 83.333
 Info (223000): Starting Vectorless Power Activity Estimation
 Warning (222013): Relative toggle rates could not be calculated because no clock domain could be identified for some nodes
 Info (223001): Completed Vectorless Power Activity Estimation
 Info (218000): Using Advanced I/O Power to simulate I/O buffers with the specified board trace model
-Warning (215044): No board thermal model was selected.  Analyzing without board thermal modeling.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (215049): Average toggle rate for this design is 0.000 millions of transitions / sec
-Info (215031): Total thermal power estimate for the design is 72.28 mW
-Info: Quartus Prime Power Analyzer was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 4913 megabytes
-    Info: Processing ended: Wed Nov 29 12:28:28 2023
+Info (215031): Total thermal power estimate for the design is 82.96 mW
+Info: Quartus Prime Power Analyzer was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 4920 megabytes
+    Info: Processing ended: Wed Nov 29 16:47:03 2023
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

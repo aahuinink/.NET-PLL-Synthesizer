@@ -1,5 +1,5 @@
 Timing Analyzer report for variable_freqdiv
-Wed Nov 29 12:28:31 2023
+Wed Nov 29 16:47:05 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -92,40 +92,40 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 20          ;
 ; Maximum allowed            ; 14          ;
 ;                            ;             ;
-; Average used               ; 1.09        ;
+; Average used               ; 1.11        ;
 ; Maximum used               ; 14          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.8%      ;
-;     Processor 3            ;   0.7%      ;
-;     Processor 4            ;   0.7%      ;
-;     Processors 5-14        ;   0.7%      ;
+;     Processor 2            ;   0.9%      ;
+;     Processor 3            ;   0.9%      ;
+;     Processors 4-14        ;   0.9%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Clocks                                                                                                                                                                                                                                                                                         ;
-+----------------------------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------------------------------------------+
-; Clock Name                                                     ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                                                            ;
-+----------------------------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------------------------------------------+
-; CLK_base                                                       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLK_base }                                                       ;
-; lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] } ;
-; M_set                                                          ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { M_set }                                                          ;
-; N_set                                                          ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { N_set }                                                          ;
-; VCO_in                                                         ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { VCO_in }                                                         ;
-+----------------------------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                                                                                              ;
++----------------------------------------------------------------+-----------+--------+------------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+----------+---------------------+--------------------------------------------------------------------+
+; Clock Name                                                     ; Type      ; Period ; Frequency  ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master   ; Source              ; Targets                                                            ;
++----------------------------------------------------------------+-----------+--------+------------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+----------+---------------------+--------------------------------------------------------------------+
+; CLK_base                                                       ; Base      ; 83.333 ; 12.0 MHz   ; 0.000 ; 41.666 ;            ;           ;             ;       ;        ;           ;            ;          ;          ;                     ; { CLK_base }                                                       ;
+; CLK_base~0|clk[0]                                              ; Generated ; 83.333 ; 12.0 MHz   ; 0.000 ; 41.666 ; 50.00      ; 1         ; 1           ;       ;        ;           ;            ; false    ; CLK_base ; CLK_base~0|inclk[0] ; { CLK_base~0|clk[0] }                                              ;
+; lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] ; Base      ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500  ;            ;           ;             ;       ;        ;           ;            ;          ;          ;                     ; { lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] } ;
+; M_set                                                          ; Base      ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500  ;            ;           ;             ;       ;        ;           ;            ;          ;          ;                     ; { M_set }                                                          ;
+; N_set                                                          ; Base      ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500  ;            ;           ;             ;       ;        ;           ;            ;          ;          ;                     ; { N_set }                                                          ;
+; VCO_in                                                         ; Base      ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500  ;            ;           ;             ;       ;        ;           ;            ;          ;          ;                     ; { VCO_in }                                                         ;
++----------------------------------------------------------------+-----------+--------+------------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+----------+---------------------+--------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Fmax Summary                                                                                                                            ;
-+------------+-----------------+----------------------------------------------------------------+---------------------------------------------------------------+
-; Fmax       ; Restricted Fmax ; Clock Name                                                     ; Note                                                          ;
-+------------+-----------------+----------------------------------------------------------------+---------------------------------------------------------------+
-; 199.44 MHz ; 199.44 MHz      ; lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] ;                                                               ;
-; 237.19 MHz ; 237.19 MHz      ; VCO_in                                                         ;                                                               ;
-; 252.33 MHz ; 250.0 MHz       ; CLK_base                                                       ; limit due to minimum period restriction (max I/O toggle rate) ;
-+------------+-----------------+----------------------------------------------------------------+---------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                                                             ;
++------------+-----------------+----------------------------------------------------------------+------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name                                                     ; Note                                           ;
++------------+-----------------+----------------------------------------------------------------+------------------------------------------------+
+; 206.27 MHz ; 206.27 MHz      ; lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] ;                                                ;
+; 238.66 MHz ; 238.66 MHz      ; VCO_in                                                         ;                                                ;
+; 653.59 MHz ; 402.09 MHz      ; CLK_base~0|clk[0]                                              ; limit due to minimum period restriction (tmin) ;
++------------+-----------------+----------------------------------------------------------------+------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -134,9 +134,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------------------------------------------------------+--------+---------------+
 ; Clock                                                          ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------+--------+---------------+
-; lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] ; -4.014 ; -24.084       ;
-; VCO_in                                                         ; -3.216 ; -19.290       ;
-; CLK_base                                                       ; -2.963 ; -8.058        ;
+; lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] ; -3.848 ; -23.088       ;
+; VCO_in                                                         ; -3.190 ; -19.134       ;
+; CLK_base~0|clk[0]                                              ; -0.987 ; -4.270        ;
 +----------------------------------------------------------------+--------+---------------+
 
 
@@ -145,9 +145,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------------------------------------------------------+--------+---------------+
 ; Clock                                                          ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------+--------+---------------+
-; CLK_base                                                       ; -1.519 ; -5.670        ;
-; lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] ; -0.126 ; -0.446        ;
-; VCO_in                                                         ; 0.488  ; 0.000         ;
+; lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] ; -0.127 ; -0.127        ;
+; CLK_base~0|clk[0]                                              ; -0.057 ; -0.057        ;
+; VCO_in                                                         ; 0.548  ; 0.000         ;
 +----------------------------------------------------------------+--------+---------------+
 
 
@@ -168,11 +168,12 @@ No paths to report.
 +----------------------------------------------------------------+--------+---------------+
 ; Clock                                                          ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------+--------+---------------+
-; CLK_base                                                       ; -3.000 ; -11.922       ;
 ; VCO_in                                                         ; -3.000 ; -11.922       ;
 ; M_set                                                          ; -3.000 ; -3.000        ;
 ; N_set                                                          ; -3.000 ; -3.000        ;
-; lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] ; -1.487 ; -8.988        ;
+; lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] ; -1.487 ; -9.240        ;
+; CLK_base                                                       ; 41.603 ; 0.000         ;
+; CLK_base~0|clk[0]                                              ; 42.003 ; 0.000         ;
 +----------------------------------------------------------------+--------+---------------+
 
 
@@ -187,9 +188,9 @@ No synchronizer chains to report.
 +------------+-----------------+----------------------------------------------------------------+---------------------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                                     ; Note                                                          ;
 +------------+-----------------+----------------------------------------------------------------+---------------------------------------------------------------+
-; 212.22 MHz ; 212.22 MHz      ; lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] ;                                                               ;
-; 255.17 MHz ; 250.0 MHz       ; VCO_in                                                         ; limit due to minimum period restriction (max I/O toggle rate) ;
-; 264.62 MHz ; 250.0 MHz       ; CLK_base                                                       ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 221.78 MHz ; 221.78 MHz      ; lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] ;                                                               ;
+; 255.69 MHz ; 250.0 MHz       ; VCO_in                                                         ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 708.72 MHz ; 402.09 MHz      ; CLK_base~0|clk[0]                                              ; limit due to minimum period restriction (tmin)                ;
 +------------+-----------------+----------------------------------------------------------------+---------------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -199,9 +200,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------------------------------------------------------+--------+---------------+
 ; Clock                                                          ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------+--------+---------------+
-; lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] ; -3.712 ; -22.272       ;
-; VCO_in                                                         ; -2.919 ; -17.508       ;
-; CLK_base                                                       ; -2.779 ; -7.165        ;
+; lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] ; -3.509 ; -21.054       ;
+; VCO_in                                                         ; -2.911 ; -17.461       ;
+; CLK_base~0|clk[0]                                              ; -0.866 ; -3.726        ;
 +----------------------------------------------------------------+--------+---------------+
 
 
@@ -210,9 +211,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------------------------------------------------------+--------+---------------+
 ; Clock                                                          ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------+--------+---------------+
-; CLK_base                                                       ; -1.408 ; -5.284        ;
-; lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] ; -0.072 ; -0.210        ;
-; VCO_in                                                         ; 0.413  ; 0.000         ;
+; CLK_base~0|clk[0]                                              ; -0.094 ; -0.094        ;
+; lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] ; -0.030 ; -0.030        ;
+; VCO_in                                                         ; 0.466  ; 0.000         ;
 +----------------------------------------------------------------+--------+---------------+
 
 
@@ -233,11 +234,12 @@ No paths to report.
 +----------------------------------------------------------------+--------+---------------+
 ; Clock                                                          ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------+--------+---------------+
-; CLK_base                                                       ; -3.000 ; -11.922       ;
 ; VCO_in                                                         ; -3.000 ; -11.922       ;
 ; M_set                                                          ; -3.000 ; -3.000        ;
 ; N_set                                                          ; -3.000 ; -3.000        ;
-; lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] ; -1.487 ; -8.922        ;
+; lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] ; -1.487 ; -8.922        ;
+; CLK_base                                                       ; 41.630 ; 0.000         ;
+; CLK_base~0|clk[0]                                              ; 41.938 ; 0.000         ;
 +----------------------------------------------------------------+--------+---------------+
 
 
@@ -252,9 +254,9 @@ No synchronizer chains to report.
 +----------------------------------------------------------------+--------+---------------+
 ; Clock                                                          ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------+--------+---------------+
-; lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] ; -1.066 ; -6.396        ;
-; VCO_in                                                         ; -0.817 ; -4.902        ;
-; CLK_base                                                       ; -0.558 ; -0.769        ;
+; lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] ; -1.004 ; -6.024        ;
+; VCO_in                                                         ; -0.782 ; -4.692        ;
+; CLK_base~0|clk[0]                                              ; -0.327 ; -1.430        ;
 +----------------------------------------------------------------+--------+---------------+
 
 
@@ -263,9 +265,9 @@ No synchronizer chains to report.
 +----------------------------------------------------------------+--------+---------------+
 ; Clock                                                          ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------+--------+---------------+
-; CLK_base                                                       ; -0.722 ; -2.714        ;
-; lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] ; 0.244  ; 0.000         ;
-; VCO_in                                                         ; 0.259  ; 0.000         ;
+; CLK_base~0|clk[0]                                              ; -0.152 ; -0.221        ;
+; lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] ; 0.244  ; 0.000         ;
+; VCO_in                                                         ; 0.257  ; 0.000         ;
 +----------------------------------------------------------------+--------+---------------+
 
 
@@ -286,11 +288,12 @@ No paths to report.
 +----------------------------------------------------------------+--------+---------------+
 ; Clock                                                          ; Slack  ; End Point TNS ;
 +----------------------------------------------------------------+--------+---------------+
-; VCO_in                                                         ; -3.000 ; -9.384        ;
-; CLK_base                                                       ; -3.000 ; -9.000        ;
+; VCO_in                                                         ; -3.000 ; -9.330        ;
 ; M_set                                                          ; -3.000 ; -3.000        ;
 ; N_set                                                          ; -3.000 ; -3.000        ;
-; lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] ; -1.000 ; -6.000        ;
+; lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] ; -1.000 ; -6.000        ;
+; CLK_base                                                       ; 41.335 ; 0.000         ;
+; CLK_base~0|clk[0]                                              ; 41.789 ; 0.000         ;
 +----------------------------------------------------------------+--------+---------------+
 
 
@@ -305,18 +308,20 @@ No synchronizer chains to report.
 +-----------------------------------------------------------------+---------+--------+----------+---------+---------------------+
 ; Clock                                                           ; Setup   ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
 +-----------------------------------------------------------------+---------+--------+----------+---------+---------------------+
-; Worst-case Slack                                                ; -4.014  ; -1.519 ; N/A      ; N/A     ; -3.000              ;
-;  CLK_base                                                       ; -2.963  ; -1.519 ; N/A      ; N/A     ; -3.000              ;
+; Worst-case Slack                                                ; -3.848  ; -0.152 ; N/A      ; N/A     ; -3.000              ;
+;  CLK_base                                                       ; N/A     ; N/A    ; N/A      ; N/A     ; 41.335              ;
+;  CLK_base~0|clk[0]                                              ; -0.987  ; -0.152 ; N/A      ; N/A     ; 41.789              ;
 ;  M_set                                                          ; N/A     ; N/A    ; N/A      ; N/A     ; -3.000              ;
 ;  N_set                                                          ; N/A     ; N/A    ; N/A      ; N/A     ; -3.000              ;
-;  VCO_in                                                         ; -3.216  ; 0.259  ; N/A      ; N/A     ; -3.000              ;
-;  lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] ; -4.014  ; -0.126 ; N/A      ; N/A     ; -1.487              ;
-; Design-wide TNS                                                 ; -51.432 ; -6.116 ; 0.0      ; 0.0     ; -38.832             ;
-;  CLK_base                                                       ; -8.058  ; -5.670 ; N/A      ; N/A     ; -11.922             ;
+;  VCO_in                                                         ; -3.190  ; 0.257  ; N/A      ; N/A     ; -3.000              ;
+;  lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] ; -3.848  ; -0.127 ; N/A      ; N/A     ; -1.487              ;
+; Design-wide TNS                                                 ; -46.492 ; -0.221 ; 0.0      ; 0.0     ; -27.162             ;
+;  CLK_base                                                       ; N/A     ; N/A    ; N/A      ; N/A     ; 0.000               ;
+;  CLK_base~0|clk[0]                                              ; -4.270  ; -0.221 ; N/A      ; N/A     ; 0.000               ;
 ;  M_set                                                          ; N/A     ; N/A    ; N/A      ; N/A     ; -3.000              ;
 ;  N_set                                                          ; N/A     ; N/A    ; N/A      ; N/A     ; -3.000              ;
-;  VCO_in                                                         ; -19.290 ; 0.000  ; N/A      ; N/A     ; -11.922             ;
-;  lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] ; -24.084 ; -0.446 ; N/A      ; N/A     ; -8.988              ;
+;  VCO_in                                                         ; -19.134 ; 0.000  ; N/A      ; N/A     ; -11.922             ;
+;  lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] ; -23.088 ; -0.127 ; N/A      ; N/A     ; -9.240              ;
 +-----------------------------------------------------------------+---------+--------+----------+---------+---------------------+
 
 
@@ -336,7 +341,7 @@ No synchronizer chains to report.
 +---------------------+-----------------------+-----------------+-----------------+
 ; Pin                 ; I/O Standard          ; 10-90 Rise Time ; 90-10 Fall Time ;
 +---------------------+-----------------------+-----------------+-----------------+
-; CLK_base            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; VCO_in              ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; M_set               ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; div_value[5]        ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; div_value[4]        ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
@@ -344,8 +349,8 @@ No synchronizer chains to report.
 ; div_value[2]        ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; div_value[1]        ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; div_value[0]        ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
-; VCO_in              ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; N_set               ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; CLK_base            ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_TMS~        ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_TCK~        ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_TDI~        ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
@@ -394,10 +399,10 @@ No synchronizer chains to report.
 +----------------------------------------------------------------+----------------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                                     ; To Clock                                                       ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +----------------------------------------------------------------+----------------------------------------------------------------+----------+----------+----------+----------+
-; CLK_base                                                       ; CLK_base                                                       ; 15       ; 0        ; 0        ; 0        ;
-; lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] ; CLK_base                                                       ; 6        ; 6        ; 0        ; 0        ;
-; lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] ; lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] ; 57       ; 0        ; 0        ; 0        ;
-; M_set                                                          ; lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] ; 6        ; 12       ; 0        ; 0        ;
+; CLK_base~0|clk[0]                                              ; CLK_base~0|clk[0]                                              ; 15       ; 0        ; 0        ; 0        ;
+; lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] ; CLK_base~0|clk[0]                                              ; 6        ; 6        ; 0        ; 0        ;
+; lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] ; lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] ; 57       ; 0        ; 0        ; 0        ;
+; M_set                                                          ; lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] ; 6        ; 12       ; 0        ; 0        ;
 ; N_set                                                          ; VCO_in                                                         ; 6        ; 12       ; 0        ; 0        ;
 ; VCO_in                                                         ; VCO_in                                                         ; 57       ; 0        ; 0        ; 0        ;
 +----------------------------------------------------------------+----------------------------------------------------------------+----------+----------+----------+----------+
@@ -409,10 +414,10 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +----------------------------------------------------------------+----------------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                                     ; To Clock                                                       ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +----------------------------------------------------------------+----------------------------------------------------------------+----------+----------+----------+----------+
-; CLK_base                                                       ; CLK_base                                                       ; 15       ; 0        ; 0        ; 0        ;
-; lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] ; CLK_base                                                       ; 6        ; 6        ; 0        ; 0        ;
-; lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] ; lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] ; 57       ; 0        ; 0        ; 0        ;
-; M_set                                                          ; lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] ; 6        ; 12       ; 0        ; 0        ;
+; CLK_base~0|clk[0]                                              ; CLK_base~0|clk[0]                                              ; 15       ; 0        ; 0        ; 0        ;
+; lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] ; CLK_base~0|clk[0]                                              ; 6        ; 6        ; 0        ; 0        ;
+; lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] ; lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] ; 57       ; 0        ; 0        ; 0        ;
+; M_set                                                          ; lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] ; 6        ; 12       ; 0        ; 0        ;
 ; N_set                                                          ; VCO_in                                                         ; 6        ; 12       ; 0        ; 0        ;
 ; VCO_in                                                         ; VCO_in                                                         ; 57       ; 0        ; 0        ; 0        ;
 +----------------------------------------------------------------+----------------------------------------------------------------+----------+----------+----------+----------+
@@ -439,23 +444,24 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 7     ; 7    ;
-; Unconstrained Input Port Paths  ; 14    ; 14   ;
+; Unconstrained Input Port Paths  ; 13    ; 13   ;
 ; Unconstrained Output Ports      ; 2     ; 2    ;
-; Unconstrained Output Port Paths ; 26    ; 26   ;
+; Unconstrained Output Port Paths ; 31    ; 31   ;
 +---------------------------------+-------+------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Clock Status Summary                                                                                                                                 ;
-+----------------------------------------------------------------+----------------------------------------------------------------+------+-------------+
-; Target                                                         ; Clock                                                          ; Type ; Status      ;
-+----------------------------------------------------------------+----------------------------------------------------------------+------+-------------+
-; CLK_base                                                       ; CLK_base                                                       ; Base ; Constrained ;
-; M_set                                                          ; M_set                                                          ; Base ; Constrained ;
-; N_set                                                          ; N_set                                                          ; Base ; Constrained ;
-; VCO_in                                                         ; VCO_in                                                         ; Base ; Constrained ;
-; lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] ; lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] ; Base ; Constrained ;
-+----------------------------------------------------------------+----------------------------------------------------------------+------+-------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Status Summary                                                                                                                                      ;
++----------------------------------------------------------------+----------------------------------------------------------------+-----------+-------------+
+; Target                                                         ; Clock                                                          ; Type      ; Status      ;
++----------------------------------------------------------------+----------------------------------------------------------------+-----------+-------------+
+; CLK_base                                                       ; CLK_base                                                       ; Base      ; Constrained ;
+; CLK_base~0|clk[0]                                              ; CLK_base~0|clk[0]                                              ; Generated ; Constrained ;
+; M_set                                                          ; M_set                                                          ; Base      ; Constrained ;
+; N_set                                                          ; N_set                                                          ; Base      ; Constrained ;
+; VCO_in                                                         ; VCO_in                                                         ; Base      ; Constrained ;
+; lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] ; lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] ; Base      ; Constrained ;
++----------------------------------------------------------------+----------------------------------------------------------------+-----------+-------------+
 
 
 +-----------------------------------------------------------------------------------------------------+
@@ -463,7 +469,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +--------------+--------------------------------------------------------------------------------------+
 ; Input Port   ; Comment                                                                              ;
 +--------------+--------------------------------------------------------------------------------------+
-; CLK_base     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; VCO_in       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; div_value[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; div_value[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; div_value[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -488,7 +494,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +--------------+--------------------------------------------------------------------------------------+
 ; Input Port   ; Comment                                                                              ;
 +--------------+--------------------------------------------------------------------------------------+
-; CLK_base     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; VCO_in       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; div_value[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; div_value[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; div_value[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -514,7 +520,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Wed Nov 29 12:28:29 2023
+    Info: Processing started: Wed Nov 29 16:47:04 2023
 Info: Command: quartus_sta variable_freqdiv -c variable_freqdiv
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -523,15 +529,18 @@ Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Warning (335093): The Timing Analyzer is analyzing 12 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'variable_freqdiv.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained generated clocks found in the design. Calling "derive_pll_clocks -create_base_clocks"
+Info (332110): Deriving PLL clocks
+    Info (332110): create_clock -period 83.333 -waveform {0.000 41.666} -name CLK_base CLK_base
+    Info (332110): create_generated_clock -source {CLK_base~0|inclk[0]} -duty_cycle 50.00 -name {CLK_base~0|clk[0]} {CLK_base~0|clk[0]}
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
-    Info (332105): create_clock -period 1.000 -name lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0]
+    Info (332105): create_clock -period 1.000 -name lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0]
     Info (332105): create_clock -period 1.000 -name N_set N_set
-    Info (332105): create_clock -period 1.000 -name CLK_base CLK_base
     Info (332105): create_clock -period 1.000 -name M_set M_set
     Info (332105): create_clock -period 1.000 -name VCO_in VCO_in
 Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
-    Info (332098): Cell: div_M11|auto_generated|counter_comb_bita0  from: dataa  to: combout
+    Info (332098): Cell: div_M11|auto_generated|counter_comb_bita0  from: datab  to: combout
     Info (332098): Cell: div_M11|auto_generated|counter_comb_bita1  from: cin  to: combout
     Info (332098): Cell: div_M11|auto_generated|counter_comb_bita2  from: cin  to: combout
     Info (332098): Cell: div_M11|auto_generated|counter_comb_bita3  from: cin  to: combout
@@ -543,33 +552,34 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -4.014
+Info (332146): Worst-case setup slack is -3.848
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.014             -24.084 lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] 
-    Info (332119):    -3.216             -19.290 VCO_in 
-    Info (332119):    -2.963              -8.058 CLK_base 
-Info (332146): Worst-case hold slack is -1.519
+    Info (332119):    -3.848             -23.088 lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] 
+    Info (332119):    -3.190             -19.134 VCO_in 
+    Info (332119):    -0.987              -4.270 CLK_base~0|clk[0] 
+Info (332146): Worst-case hold slack is -0.127
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.519              -5.670 CLK_base 
-    Info (332119):    -0.126              -0.446 lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] 
-    Info (332119):     0.488               0.000 VCO_in 
+    Info (332119):    -0.127              -0.127 lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] 
+    Info (332119):    -0.057              -0.057 CLK_base~0|clk[0] 
+    Info (332119):     0.548               0.000 VCO_in 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000             -11.922 CLK_base 
     Info (332119):    -3.000             -11.922 VCO_in 
     Info (332119):    -3.000              -3.000 M_set 
     Info (332119):    -3.000              -3.000 N_set 
-    Info (332119):    -1.487              -8.988 lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] 
+    Info (332119):    -1.487              -9.240 lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] 
+    Info (332119):    41.603               0.000 CLK_base 
+    Info (332119):    42.003               0.000 CLK_base~0|clk[0] 
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
-    Info (332098): Cell: div_M11|auto_generated|counter_comb_bita0  from: dataa  to: combout
+    Info (332098): Cell: div_M11|auto_generated|counter_comb_bita0  from: datab  to: combout
     Info (332098): Cell: div_M11|auto_generated|counter_comb_bita1  from: cin  to: combout
     Info (332098): Cell: div_M11|auto_generated|counter_comb_bita2  from: cin  to: combout
     Info (332098): Cell: div_M11|auto_generated|counter_comb_bita3  from: cin  to: combout
@@ -577,31 +587,32 @@ Info (332097): The following timing edges are non-unate.  The Timing Analyzer wi
     Info (332098): Cell: div_M11|auto_generated|counter_comb_bita5  from: cin  to: combout
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -3.712
+Info (332146): Worst-case setup slack is -3.509
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.712             -22.272 lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] 
-    Info (332119):    -2.919             -17.508 VCO_in 
-    Info (332119):    -2.779              -7.165 CLK_base 
-Info (332146): Worst-case hold slack is -1.408
+    Info (332119):    -3.509             -21.054 lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] 
+    Info (332119):    -2.911             -17.461 VCO_in 
+    Info (332119):    -0.866              -3.726 CLK_base~0|clk[0] 
+Info (332146): Worst-case hold slack is -0.094
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.408              -5.284 CLK_base 
-    Info (332119):    -0.072              -0.210 lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] 
-    Info (332119):     0.413               0.000 VCO_in 
+    Info (332119):    -0.094              -0.094 CLK_base~0|clk[0] 
+    Info (332119):    -0.030              -0.030 lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] 
+    Info (332119):     0.466               0.000 VCO_in 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000             -11.922 CLK_base 
     Info (332119):    -3.000             -11.922 VCO_in 
     Info (332119):    -3.000              -3.000 M_set 
     Info (332119):    -3.000              -3.000 N_set 
-    Info (332119):    -1.487              -8.922 lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] 
+    Info (332119):    -1.487              -8.922 lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] 
+    Info (332119):    41.630               0.000 CLK_base 
+    Info (332119):    41.938               0.000 CLK_base~0|clk[0] 
 Info: Analyzing Fast 1200mV 0C Model
 Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
-    Info (332098): Cell: div_M11|auto_generated|counter_comb_bita0  from: dataa  to: combout
+    Info (332098): Cell: div_M11|auto_generated|counter_comb_bita0  from: datab  to: combout
     Info (332098): Cell: div_M11|auto_generated|counter_comb_bita1  from: cin  to: combout
     Info (332098): Cell: div_M11|auto_generated|counter_comb_bita2  from: cin  to: combout
     Info (332098): Cell: div_M11|auto_generated|counter_comb_bita3  from: cin  to: combout
@@ -609,34 +620,35 @@ Info (332097): The following timing edges are non-unate.  The Timing Analyzer wi
     Info (332098): Cell: div_M11|auto_generated|counter_comb_bita5  from: cin  to: combout
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -1.066
+Info (332146): Worst-case setup slack is -1.004
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.066              -6.396 lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] 
-    Info (332119):    -0.817              -4.902 VCO_in 
-    Info (332119):    -0.558              -0.769 CLK_base 
-Info (332146): Worst-case hold slack is -0.722
+    Info (332119):    -1.004              -6.024 lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] 
+    Info (332119):    -0.782              -4.692 VCO_in 
+    Info (332119):    -0.327              -1.430 CLK_base~0|clk[0] 
+Info (332146): Worst-case hold slack is -0.152
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.722              -2.714 CLK_base 
-    Info (332119):     0.244               0.000 lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] 
-    Info (332119):     0.259               0.000 VCO_in 
+    Info (332119):    -0.152              -0.221 CLK_base~0|clk[0] 
+    Info (332119):     0.244               0.000 lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] 
+    Info (332119):     0.257               0.000 VCO_in 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000              -9.384 VCO_in 
-    Info (332119):    -3.000              -9.000 CLK_base 
+    Info (332119):    -3.000              -9.330 VCO_in 
     Info (332119):    -3.000              -3.000 M_set 
     Info (332119):    -3.000              -3.000 N_set 
-    Info (332119):    -1.000              -6.000 lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0] 
+    Info (332119):    -1.000              -6.000 lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0] 
+    Info (332119):    41.335               0.000 CLK_base 
+    Info (332119):    41.789               0.000 CLK_base~0|clk[0] 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4861 megabytes
-    Info: Processing ended: Wed Nov 29 12:28:31 2023
-    Info: Elapsed time: 00:00:02
+    Info: Peak virtual memory: 4870 megabytes
+    Info: Processing ended: Wed Nov 29 16:47:05 2023
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 

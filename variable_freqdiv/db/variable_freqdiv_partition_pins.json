@@ -12,7 +12,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "CLK_base",
+					"name" : "VCO_in",
 					"strict" : false
 				},
 				{
@@ -41,10 +41,6 @@
 				},
 				{
 					"name" : "div_value[0]",
-					"strict" : false
-				},
-				{
-					"name" : "VCO_in",
 					"strict" : false
 				},
 				{

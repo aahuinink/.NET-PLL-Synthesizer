@@ -3,8 +3,6 @@ M_out <= clk_bypass:inst.OUT
 M_set => i.IN0
 M_set => LPM_LATCH:inst4.gate
 CLK_base => LPM_COUNTER:div_M11.clock
-CLK_base => clk_bypass:inst.CLK_base
-CLK_base => clk_bypass:inst8.CLK_base
 div_value[0] => LPM_LATCH:inst4.data[0]
 div_value[0] => LPM_LATCH:inst5.data[0]
 div_value[1] => LPM_LATCH:inst4.data[1]
@@ -21,6 +19,7 @@ N_out <= clk_bypass:inst8.OUT
 N_set => i1.IN0
 N_set => LPM_LATCH:inst5.gate
 VCO_in => LPM_COUNTER:div_M10.clock
+VCO_in => clk_bypass:inst8.CLK_base
 
 
 |variable_freqdiv|clk_bypass:inst
@@ -99,7 +98,7 @@ sload => counter_reg_bit[5].IN1
 
 
 |variable_freqdiv|LPM_COUNTER:div_M11
-clock => cntr_eui:auto_generated.clock
+clock => cntr_ehj:auto_generated.clock
 clk_en => ~NO_FANOUT~
 cnt_en => ~NO_FANOUT~
 updown => ~NO_FANOUT~
@@ -124,7 +123,7 @@ q[2] <= <GND>
 q[3] <= <GND>
 q[4] <= <GND>
 q[5] <= <GND>
-cout <= cntr_eui:auto_generated.cout
+cout <= cntr_ehj:auto_generated.cout
 eq[0] <= <GND>
 eq[1] <= <GND>
 eq[2] <= <GND>
@@ -143,7 +142,7 @@ eq[14] <= <GND>
 eq[15] <= <GND>
 
 
-|variable_freqdiv|LPM_COUNTER:div_M11|cntr_eui:auto_generated
+|variable_freqdiv|LPM_COUNTER:div_M11|cntr_ehj:auto_generated
 clock => counter_reg_bit[5].CLK
 clock => counter_reg_bit[4].CLK
 clock => counter_reg_bit[3].CLK

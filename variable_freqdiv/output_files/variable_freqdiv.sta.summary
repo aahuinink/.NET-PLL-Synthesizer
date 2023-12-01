@@ -2,33 +2,29 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0]'
-Slack : -4.014
-TNS   : -24.084
+Type  : Slow 1200mV 85C Model Setup 'lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0]'
+Slack : -3.848
+TNS   : -23.088
 
 Type  : Slow 1200mV 85C Model Setup 'VCO_in'
-Slack : -3.216
-TNS   : -19.290
+Slack : -3.190
+TNS   : -19.134
 
-Type  : Slow 1200mV 85C Model Setup 'CLK_base'
-Slack : -2.963
-TNS   : -8.058
+Type  : Slow 1200mV 85C Model Setup 'CLK_base~0|clk[0]'
+Slack : -0.987
+TNS   : -4.270
 
-Type  : Slow 1200mV 85C Model Hold 'CLK_base'
-Slack : -1.519
-TNS   : -5.670
+Type  : Slow 1200mV 85C Model Hold 'lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0]'
+Slack : -0.127
+TNS   : -0.127
 
-Type  : Slow 1200mV 85C Model Hold 'lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0]'
-Slack : -0.126
-TNS   : -0.446
+Type  : Slow 1200mV 85C Model Hold 'CLK_base~0|clk[0]'
+Slack : -0.057
+TNS   : -0.057
 
 Type  : Slow 1200mV 85C Model Hold 'VCO_in'
-Slack : 0.488
+Slack : 0.548
 TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLK_base'
-Slack : -3.000
-TNS   : -11.922
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'VCO_in'
 Slack : -3.000
@@ -42,37 +38,41 @@ Type  : Slow 1200mV 85C Model Minimum Pulse Width 'N_set'
 Slack : -3.000
 TNS   : -3.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0]'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0]'
 Slack : -1.487
-TNS   : -8.988
+TNS   : -9.240
 
-Type  : Slow 1200mV 0C Model Setup 'lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0]'
-Slack : -3.712
-TNS   : -22.272
-
-Type  : Slow 1200mV 0C Model Setup 'VCO_in'
-Slack : -2.919
-TNS   : -17.508
-
-Type  : Slow 1200mV 0C Model Setup 'CLK_base'
-Slack : -2.779
-TNS   : -7.165
-
-Type  : Slow 1200mV 0C Model Hold 'CLK_base'
-Slack : -1.408
-TNS   : -5.284
-
-Type  : Slow 1200mV 0C Model Hold 'lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0]'
-Slack : -0.072
-TNS   : -0.210
-
-Type  : Slow 1200mV 0C Model Hold 'VCO_in'
-Slack : 0.413
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLK_base'
+Slack : 41.603
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLK_base'
-Slack : -3.000
-TNS   : -11.922
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLK_base~0|clk[0]'
+Slack : 42.003
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0]'
+Slack : -3.509
+TNS   : -21.054
+
+Type  : Slow 1200mV 0C Model Setup 'VCO_in'
+Slack : -2.911
+TNS   : -17.461
+
+Type  : Slow 1200mV 0C Model Setup 'CLK_base~0|clk[0]'
+Slack : -0.866
+TNS   : -3.726
+
+Type  : Slow 1200mV 0C Model Hold 'CLK_base~0|clk[0]'
+Slack : -0.094
+TNS   : -0.094
+
+Type  : Slow 1200mV 0C Model Hold 'lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0]'
+Slack : -0.030
+TNS   : -0.030
+
+Type  : Slow 1200mV 0C Model Hold 'VCO_in'
+Slack : 0.466
+TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'VCO_in'
 Slack : -3.000
@@ -86,41 +86,45 @@ Type  : Slow 1200mV 0C Model Minimum Pulse Width 'N_set'
 Slack : -3.000
 TNS   : -3.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0]'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0]'
 Slack : -1.487
 TNS   : -8.922
 
-Type  : Fast 1200mV 0C Model Setup 'lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0]'
-Slack : -1.066
-TNS   : -6.396
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLK_base'
+Slack : 41.630
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLK_base~0|clk[0]'
+Slack : 41.938
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0]'
+Slack : -1.004
+TNS   : -6.024
 
 Type  : Fast 1200mV 0C Model Setup 'VCO_in'
-Slack : -0.817
-TNS   : -4.902
+Slack : -0.782
+TNS   : -4.692
 
-Type  : Fast 1200mV 0C Model Setup 'CLK_base'
-Slack : -0.558
-TNS   : -0.769
+Type  : Fast 1200mV 0C Model Setup 'CLK_base~0|clk[0]'
+Slack : -0.327
+TNS   : -1.430
 
-Type  : Fast 1200mV 0C Model Hold 'CLK_base'
-Slack : -0.722
-TNS   : -2.714
+Type  : Fast 1200mV 0C Model Hold 'CLK_base~0|clk[0]'
+Slack : -0.152
+TNS   : -0.221
 
-Type  : Fast 1200mV 0C Model Hold 'lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0]'
+Type  : Fast 1200mV 0C Model Hold 'lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0]'
 Slack : 0.244
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'VCO_in'
-Slack : 0.259
+Slack : 0.257
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'VCO_in'
 Slack : -3.000
-TNS   : -9.384
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLK_base'
-Slack : -3.000
-TNS   : -9.000
+TNS   : -9.330
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'M_set'
 Slack : -3.000
@@ -130,8 +134,16 @@ Type  : Fast 1200mV 0C Model Minimum Pulse Width 'N_set'
 Slack : -3.000
 TNS   : -3.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'lpm_counter:div_M11|cntr_eui:auto_generated|counter_reg_bit[0]'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'lpm_counter:div_M11|cntr_ehj:auto_generated|counter_reg_bit[0]'
 Slack : -1.000
 TNS   : -6.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLK_base'
+Slack : 41.335
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLK_base~0|clk[0]'
+Slack : 41.789
+TNS   : 0.000
 
 ------------------------------------------------------------

@@ -33,15 +33,14 @@ namespace ComPortFinal
         IDigitalOutputPort N_set =
             Device.CreateDigitalOutputPort(Device.Pins.D03, false);
 
-        //public MeadowApp()
-        //{
-        //    Initialize();
-        //    SendLoop();
-        //}
+        public MeadowApp()
+        {
+            Initialize();
+            Run();
+        }
         public override Task Run()
         {
             Console.WriteLine("Run...");
-
             RunLoop();
             return base.Run();
         }
@@ -49,8 +48,6 @@ namespace ComPortFinal
         public override Task Initialize()
         {
             Console.WriteLine("Initialize hardware...");
-
-            // TODO: init digital output pins here  
 
             serialPort = Device.PlatformOS.GetSerialPortName("COM1").CreateSerialPort(baudRate: 115200);
             serialPort.Open();
@@ -62,56 +59,21 @@ namespace ComPortFinal
 
         private void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            Packet packet = new Packet(expPayloadLength: 4, numberFlag: false); // total length is 12 
+            Packet rec = new Packet(4);     // init new packet expecting a payload length of 4
 
-            //Console.WriteLine(serialPort.BytesToRead);
+            byte[] rxBuffer = new byte[12];
+            serialPort.Read(rxBuffer, 0, 12); // read serial data into rx buffer
+            
+            List<PacketError> errors = rec.TryRXParse(rxBuffer);
 
-            // total length: 3 wide header, 4 wide payload, no packet number, 3 wide chxum, cr + nl = 12
-            byte[] response = new byte[12];
-            serialPort.Read(response, 0, packet.ExpLength);
-            string recieved = response.ToString();
-
-            // parse into packet object
-            List<PacketError> errors = packet.TryRXParse(recieved);
-
-            // check for errors
             if (errors.Count > 0)
             {
-                Packet errPacket = new Packet("Error", false);
-                errPacket.Send(serialPort);
-                //foreach ( PacketError error in errors)
-                //{
-                //    errorChecker.Handle(error);           
-                //}
-                // no need to handle bc the meadow board doesn't care about keeping track of errors right now
-
-                IDigitalOutputPort redLed = Device.CreateDigitalOutputPort(Device.Pins.OnboardLedRed);
-                redLed.State = true;
+                // TODO write thing to talk back...
                 return;
             }
 
-            IDigitalOutputPort greenLed = Device.CreateDigitalOutputPort(Device.Pins.OnboardLedGreen);
-            greenLed.State = true;
-
-            FreqRatio freqRatio = new FreqRatio();
-
-            // convert packet payload to a frequency ratio
-            freqRatio.RatioLookup(packet.Payload);
-
-            // set the denominator
-            SetFreqDivider(freqRatio.Denominator);
-
-            Pulse(N_set);
-
-            // set the numerator
-            SetFreqDivider(freqRatio.Denominator);
-
-            Pulse(M_set);
-
-            Packet ack = new Packet("recv OK", false);
-
-            ack.Send(serialPort);
-
+            Packet tx = new Packet("recv OK");
+            tx.Send(serialPort);
             return;
         }
 
@@ -123,24 +85,24 @@ namespace ComPortFinal
             }
         }
 
-        private void SetFreqDivider(byte division)
-        {
-            // shift in the 6 bit value into the divider output ports
-            for (byte i = 0; i < 6; i++)
-            {
-                frequencyDivOutput[i].State = (division >> i & 0x01) == 0x01;
-            }
-            Thread.Sleep(1); // let voltages stabilize
-            return;
-        }
+        //private void SetFreqDivider(byte division)
+        //{
+        //    // shift in the 6 bit value into the divider output ports
+        //    for (byte i = 0; i < 6; i++)
+        //    {
+        //        frequencyDivOutput[i].State = (division >> i & 0x01) == 0x01;
+        //    }
+        //    Thread.Sleep(1); // let voltages stabilize
+        //    return;
+        //}
 
-        private void Pulse(IDigitalOutputPort port)
-        {
-            port.State = true;  // bring high
-            Thread.Sleep(1);    // let voltage stabilize and let latches set
-            port.State = false; // bring low
-            Thread.Sleep(1);    // stabilize
-            return;
-        }
+        //private void Pulse(IDigitalOutputPort port)
+        //{
+        //    port.State = true;  // bring high
+        //    Thread.Sleep(1);    // let voltage stabilize and let latches set
+        //    port.State = false; // bring low
+        //    Thread.Sleep(1);    // stabilize
+        //    return;
+        //}
     }
 }

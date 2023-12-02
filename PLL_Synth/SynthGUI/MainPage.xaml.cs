@@ -1,36 +1,52 @@
 ﻿using System.IO.Ports;
 using ComPortFinal;
+using Meadow.Hardware;
 
 namespace SynthGUI
 {
     public partial class MainPage : ContentPage
     {
         // hardware objects
-        private SerialPort serialPort = new SerialPort();
-
+        SerialPort serialPort = new SerialPort();
+        string recString;
         public MainPage()
         {
             InitializeComponent();
+            string[] ports = SerialPort.GetPortNames();
+            pkComPorts.ItemsSource = ports;
+            if (ports.Length > 0)
+            {
+                pkComPorts.SelectedItem = ports[0];
+            }
             Loaded += MainPage_Loaded;
 
-            serialPort.DataReceived += SerialPort_DataReceived;
+            
+        }
+
+        private void MyMainThreadCode()
+        {
+            output.Text = recString;
+            return;
         }
 
         private void MainPage_Loaded(object sender, EventArgs e)
         {
-            string[] ports = SerialPort.GetPortNames(); 
-            pkComPorts.ItemsSource = ports;
-            if (ports.Length > 0 )
-            {
-                pkComPorts.SelectedItem = ports[0];
-            }
+            serialPort.BaudRate = 115200;
+            serialPort.ReceivedBytesThreshold = 1;
+            serialPort.DataReceived += SerialPort_DataReceived;
             return;
+        }
+         
+        private void SerialPort_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
+        {
+            recString = serialPort.ReadLine();
+            MainThread.BeginInvokeOnMainThread(MyMainThreadCode);
         }
 
         private void entryInput_Completed(object sender, EventArgs e)
         {
             string input = ((Entry)sender).Text.TrimEnd('\r', '\n');
-            Packet packet = new Packet(input, false);
+            Packet packet = new Packet(input);
             output.Text = ($"Length: {packet.Length}\n{packet.Header}{packet.Payload}{packet.Checksum}");
             try
             {
@@ -47,19 +63,9 @@ namespace SynthGUI
             string port = pkComPorts.SelectedItem.ToString();
             serialPort.PortName = port;
             serialPort.BaudRate = 115200;
-            serialPort.Parity = Parity.None;
+            serialPort.Parity = System.IO.Ports.Parity.None;
             serialPort.Open();
             output.Text = "COM opened";
-        }
-
-        private void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
-        {
-            Packet inPacket = new Packet(expPayloadLength: "recv OK".Length, false);
-            byte[] response = new byte[inPacket.ExpLength];
-            serialPort.Read(response, 0, inPacket.ExpLength);
-            string recieved = response.ToString();
-            output.Text = recieved;
-            return;
         }
     }
 }

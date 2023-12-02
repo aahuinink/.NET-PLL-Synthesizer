@@ -1,5 +1,5 @@
 Analysis & Synthesis report for variable_freqdiv
-Wed Nov 29 16:46:55 2023
+Sat Dec 02 12:46:59 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -15,14 +15,11 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. User-Specified and Inferred Latches
   9. General Register Statistics
- 10. Parameter Settings for User Entity Instance: LPM_COUNTER:div_M
- 11. Parameter Settings for User Entity Instance: LPM_COUNTER:div_M11
- 12. Parameter Settings for User Entity Instance: LPM_LATCH:inst4
- 13. Parameter Settings for User Entity Instance: LPM_COUNTER:div_M10
- 14. Parameter Settings for User Entity Instance: LPM_LATCH:inst5
- 15. Post-Synthesis Netlist Statistics for Top Partition
- 16. Elapsed Time Per Partition
- 17. Analysis & Synthesis Messages
+ 10. Parameter Settings for User Entity Instance: LPM_COUNTER:div_M10
+ 11. Parameter Settings for User Entity Instance: LPM_LATCH:inst5
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -49,20 +46,20 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Nov 29 16:46:55 2023       ;
+; Analysis & Synthesis Status        ; Successful - Sat Dec 02 12:46:59 2023       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; variable_freqdiv                            ;
 ; Top-level Entity Name              ; variable_freqdiv                            ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 41                                          ;
-;     Total combinational functions  ; 41                                          ;
-;     Dedicated logic registers      ; 18                                          ;
-; Total registers                    ; 18                                          ;
-; Total pins                         ; 12                                          ;
+; Total logic elements               ; 20                                          ;
+;     Total combinational functions  ; 17                                          ;
+;     Dedicated logic registers      ; 9                                           ;
+; Total registers                    ; 9                                           ;
+; Total pins                         ; 10                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 1                                           ;
+; Total PLLs                         ; 0                                           ;
 ; UFM blocks                         ; 0                                           ;
 ; ADC blocks                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
@@ -162,13 +159,13 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 20          ;
 ; Maximum allowed            ; 14          ;
 ;                            ;             ;
-; Average used               ; 1.00        ;
+; Average used               ; 1.01        ;
 ; Maximum used               ; 14          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-14        ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processors 3-14        ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -190,44 +187,40 @@ https://fpgasoftware.intel.com/eula.
 ; alt_counter_stratix.inc          ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/alt_counter_stratix.inc     ;         ;
 ; aglobal201.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc              ;         ;
 ; db/cntr_cki.tdf                  ; yes             ; Auto-Generated Megafunction        ; C:/Users/a_hui/source/repos/dotNET-PLL-Synth/variable_freqdiv/db/cntr_cki.tdf      ;         ;
-; db/cntr_ehj.tdf                  ; yes             ; Auto-Generated Megafunction        ; C:/Users/a_hui/source/repos/dotNET-PLL-Synth/variable_freqdiv/db/cntr_ehj.tdf      ;         ;
 ; lpm_latch.tdf                    ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_latch.tdf               ;         ;
 +----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                                                    ;
-+---------------------------------------------+------------------------------------------------------------------+
-; Resource                                    ; Usage                                                            ;
-+---------------------------------------------+------------------------------------------------------------------+
-; Estimated Total logic elements              ; 41                                                               ;
-;                                             ;                                                                  ;
-; Total combinational functions               ; 41                                                               ;
-; Logic element usage by number of LUT inputs ;                                                                  ;
-;     -- 4 input functions                    ; 4                                                                ;
-;     -- 3 input functions                    ; 12                                                               ;
-;     -- <=2 input functions                  ; 25                                                               ;
-;                                             ;                                                                  ;
-; Logic elements by mode                      ;                                                                  ;
-;     -- normal mode                          ; 23                                                               ;
-;     -- arithmetic mode                      ; 18                                                               ;
-;                                             ;                                                                  ;
-; Total registers                             ; 18                                                               ;
-;     -- Dedicated logic registers            ; 18                                                               ;
-;     -- I/O registers                        ; 0                                                                ;
-;                                             ;                                                                  ;
-; I/O pins                                    ; 12                                                               ;
-;                                             ;                                                                  ;
-; Embedded Multiplier 9-bit elements          ; 0                                                                ;
-;                                             ;                                                                  ;
-; Total PLLs                                  ; 1                                                                ;
-;     -- PLLs                                 ; 1                                                                ;
-;                                             ;                                                                  ;
-; Maximum fan-out node                        ; lpm_counter:div_M11|cntr_ehj:auto_generated|counter_comb_bita5~0 ;
-; Maximum fan-out                             ; 7                                                                ;
-; Total fan-out                               ; 172                                                              ;
-; Average fan-out                             ; 2.05                                                             ;
-+---------------------------------------------+------------------------------------------------------------------+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 20    ;
+;                                             ;       ;
+; Total combinational functions               ; 17    ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 2     ;
+;     -- 3 input functions                    ; 6     ;
+;     -- <=2 input functions                  ; 9     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 11    ;
+;     -- arithmetic mode                      ; 6     ;
+;                                             ;       ;
+; Total registers                             ; 9     ;
+;     -- Dedicated logic registers            ; 9     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 10    ;
+;                                             ;       ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; inst3 ;
+; Maximum fan-out                             ; 7     ;
+; Total fan-out                               ; 83    ;
+; Average fan-out                             ; 1.80  ;
++---------------------------------------------+-------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -235,40 +228,28 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                           ; Entity Name      ; Library Name ;
 +---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------+------------------+--------------+
-; |variable_freqdiv               ; 41 (2)              ; 18 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 12   ; 0            ; 0          ; |variable_freqdiv                                             ; variable_freqdiv ; work         ;
+; |variable_freqdiv               ; 17 (1)              ; 9 (3)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 10   ; 0            ; 0          ; |variable_freqdiv                                             ; variable_freqdiv ; work         ;
 ;    |clk_bypass:inst8|           ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |variable_freqdiv|clk_bypass:inst8                            ; clk_bypass       ; work         ;
-;    |clk_bypass:inst|            ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |variable_freqdiv|clk_bypass:inst                             ; clk_bypass       ; work         ;
 ;    |lpm_counter:div_M10|        ; 7 (0)               ; 6 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |variable_freqdiv|lpm_counter:div_M10                         ; lpm_counter      ; work         ;
 ;       |cntr_cki:auto_generated| ; 7 (7)               ; 6 (6)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |variable_freqdiv|lpm_counter:div_M10|cntr_cki:auto_generated ; cntr_cki         ; work         ;
-;    |lpm_counter:div_M11|        ; 7 (0)               ; 6 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |variable_freqdiv|lpm_counter:div_M11                         ; lpm_counter      ; work         ;
-;       |cntr_ehj:auto_generated| ; 7 (7)               ; 6 (6)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |variable_freqdiv|lpm_counter:div_M11|cntr_ehj:auto_generated ; cntr_ehj         ; work         ;
-;    |lpm_counter:div_M|          ; 7 (0)               ; 6 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |variable_freqdiv|lpm_counter:div_M                           ; lpm_counter      ; work         ;
-;       |cntr_cki:auto_generated| ; 7 (7)               ; 6 (6)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |variable_freqdiv|lpm_counter:div_M|cntr_cki:auto_generated   ; cntr_cki         ; work         ;
-;    |lpm_latch:inst4|            ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |variable_freqdiv|lpm_latch:inst4                             ; lpm_latch        ; work         ;
 ;    |lpm_latch:inst5|            ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |variable_freqdiv|lpm_latch:inst5                             ; lpm_latch        ; work         ;
 +---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+----------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                ;
-+-----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
-+-----------------------------------------------------+---------------------+------------------------+
-; lpm_latch:inst4|latches[5]                          ; M_set               ; yes                    ;
-; lpm_latch:inst4|latches[4]                          ; M_set               ; yes                    ;
-; lpm_latch:inst4|latches[3]                          ; M_set               ; yes                    ;
-; lpm_latch:inst4|latches[2]                          ; M_set               ; yes                    ;
-; lpm_latch:inst4|latches[1]                          ; M_set               ; yes                    ;
-; lpm_latch:inst4|latches[0]                          ; M_set               ; yes                    ;
-; lpm_latch:inst5|latches[5]                          ; N_set               ; yes                    ;
-; lpm_latch:inst5|latches[4]                          ; N_set               ; yes                    ;
-; lpm_latch:inst5|latches[3]                          ; N_set               ; yes                    ;
-; lpm_latch:inst5|latches[2]                          ; N_set               ; yes                    ;
-; lpm_latch:inst5|latches[1]                          ; N_set               ; yes                    ;
-; lpm_latch:inst5|latches[0]                          ; N_set               ; yes                    ;
-; Number of user-specified and inferred latches = 12  ;                     ;                        ;
-+-----------------------------------------------------+---------------------+------------------------+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; lpm_latch:inst5|latches[5]                         ; N_set               ; yes                    ;
+; lpm_latch:inst5|latches[4]                         ; N_set               ; yes                    ;
+; lpm_latch:inst5|latches[3]                         ; N_set               ; yes                    ;
+; lpm_latch:inst5|latches[2]                         ; N_set               ; yes                    ;
+; lpm_latch:inst5|latches[1]                         ; N_set               ; yes                    ;
+; lpm_latch:inst5|latches[0]                         ; N_set               ; yes                    ;
+; Number of user-specified and inferred latches = 6  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
@@ -277,79 +258,14 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 18    ;
+; Total registers                              ; 9     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 12    ;
+; Number of registers using Synchronous Load   ; 6     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+-----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: LPM_COUNTER:div_M  ;
-+------------------------+-------------------+--------------------+
-; Parameter Name         ; Value             ; Type               ;
-+------------------------+-------------------+--------------------+
-; AUTO_CARRY_CHAINS      ; ON                ; AUTO_CARRY         ;
-; IGNORE_CARRY_BUFFERS   ; OFF               ; IGNORE_CARRY       ;
-; AUTO_CASCADE_CHAINS    ; ON                ; AUTO_CASCADE       ;
-; IGNORE_CASCADE_BUFFERS ; OFF               ; IGNORE_CASCADE     ;
-; LPM_WIDTH              ; 6                 ; Untyped            ;
-; LPM_DIRECTION          ; DOWN              ; Untyped            ;
-; LPM_MODULUS            ; 0                 ; Untyped            ;
-; LPM_AVALUE             ; UNUSED            ; Untyped            ;
-; LPM_SVALUE             ; UNUSED            ; Untyped            ;
-; LPM_PORT_UPDOWN        ; PORT_CONNECTIVITY ; Untyped            ;
-; DEVICE_FAMILY          ; MAX 10            ; Untyped            ;
-; CARRY_CHAIN            ; MANUAL            ; Untyped            ;
-; CARRY_CHAIN_LENGTH     ; 48                ; CARRY_CHAIN_LENGTH ;
-; NOT_GATE_PUSH_BACK     ; ON                ; NOT_GATE_PUSH_BACK ;
-; CARRY_CNT_EN           ; SMART             ; Untyped            ;
-; LABWIDE_SCLR           ; ON                ; Untyped            ;
-; USE_NEW_VERSION        ; TRUE              ; Untyped            ;
-; CBXI_PARAMETER         ; cntr_cki          ; Untyped            ;
-+------------------------+-------------------+--------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: LPM_COUNTER:div_M11 ;
-+------------------------+-------------------+---------------------+
-; Parameter Name         ; Value             ; Type                ;
-+------------------------+-------------------+---------------------+
-; AUTO_CARRY_CHAINS      ; ON                ; AUTO_CARRY          ;
-; IGNORE_CARRY_BUFFERS   ; OFF               ; IGNORE_CARRY        ;
-; AUTO_CASCADE_CHAINS    ; ON                ; AUTO_CASCADE        ;
-; IGNORE_CASCADE_BUFFERS ; OFF               ; IGNORE_CASCADE      ;
-; LPM_WIDTH              ; 6                 ; Untyped             ;
-; LPM_DIRECTION          ; DEFAULT           ; Untyped             ;
-; LPM_MODULUS            ; 4000000           ; Untyped             ;
-; LPM_AVALUE             ; UNUSED            ; Untyped             ;
-; LPM_SVALUE             ; UNUSED            ; Untyped             ;
-; LPM_PORT_UPDOWN        ; PORT_CONNECTIVITY ; Untyped             ;
-; DEVICE_FAMILY          ; MAX 10            ; Untyped             ;
-; CARRY_CHAIN            ; MANUAL            ; Untyped             ;
-; CARRY_CHAIN_LENGTH     ; 48                ; CARRY_CHAIN_LENGTH  ;
-; NOT_GATE_PUSH_BACK     ; ON                ; NOT_GATE_PUSH_BACK  ;
-; CARRY_CNT_EN           ; SMART             ; Untyped             ;
-; LABWIDE_SCLR           ; ON                ; Untyped             ;
-; USE_NEW_VERSION        ; TRUE              ; Untyped             ;
-; CBXI_PARAMETER         ; cntr_ehj          ; Untyped             ;
-+------------------------+-------------------+---------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: LPM_LATCH:inst4 ;
-+----------------+--------+------------------------------------+
-; Parameter Name ; Value  ; Type                               ;
-+----------------+--------+------------------------------------+
-; LPM_WIDTH      ; 6      ; Untyped                            ;
-; LPM_AVALUE     ; UNUSED ; Untyped                            ;
-+----------------+--------+------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +------------------------------------------------------------------+
@@ -395,23 +311,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 12                          ;
-; cycloneiii_ff         ; 18                          ;
-;     SLD               ; 12                          ;
-;     plain             ; 6                           ;
-; cycloneiii_lcell_comb ; 41                          ;
-;     arith             ; 18                          ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 16                          ;
-;     normal            ; 23                          ;
-;         0 data inputs ; 3                           ;
-;         2 data inputs ; 4                           ;
-;         3 data inputs ; 12                          ;
-;         4 data inputs ; 4                           ;
-; cycloneiii_pll        ; 1                           ;
+; boundary_port         ; 10                          ;
+; cycloneiii_ff         ; 9                           ;
+;     SLD               ; 6                           ;
+;     plain             ; 3                           ;
+; cycloneiii_lcell_comb ; 17                          ;
+;     arith             ; 6                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 5                           ;
+;     normal            ; 11                          ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 6                           ;
+;         4 data inputs ; 2                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.60                        ;
-; Average LUT depth     ; 1.81                        ;
+; Average LUT depth     ; 1.60                        ;
 +-----------------------+-----------------------------+
 
 
@@ -430,7 +345,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Wed Nov 29 16:46:48 2023
+    Info: Processing started: Sat Dec 02 12:46:52 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off variable_freqdiv -c variable_freqdiv
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
@@ -443,46 +358,29 @@ Info (12021): Found 1 design units, including 1 entities, in source file pin_sav
 Info (12021): Found 1 design units, including 1 entities, in source file 6bit_shift.bdf
     Info (12023): Found entity 1: 6bit_shift
 Info (12127): Elaborating entity "variable_freqdiv" for the top level hierarchy
-Warning (275004): Undeclared parameter DEFAULT
-Warning (275006): Can't find a definition for parameter LPM_DIRECTION -- assuming DEFAULT was intended to be a quoted string
-Info (12128): Elaborating entity "clk_bypass" for hierarchy "clk_bypass:inst"
-Info (12128): Elaborating entity "LPM_COUNTER" for hierarchy "LPM_COUNTER:div_M"
-Info (12130): Elaborated megafunction instantiation "LPM_COUNTER:div_M"
-Info (12133): Instantiated megafunction "LPM_COUNTER:div_M" with the following parameter:
+Info (12128): Elaborating entity "clk_bypass" for hierarchy "clk_bypass:inst8"
+Info (12128): Elaborating entity "LPM_COUNTER" for hierarchy "LPM_COUNTER:div_M10"
+Info (12130): Elaborated megafunction instantiation "LPM_COUNTER:div_M10"
+Info (12133): Instantiated megafunction "LPM_COUNTER:div_M10" with the following parameter:
     Info (12134): Parameter "LPM_DIRECTION" = "DOWN"
     Info (12134): Parameter "LPM_WIDTH" = "6"
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_cki.tdf
     Info (12023): Found entity 1: cntr_cki File: C:/Users/a_hui/source/repos/dotNET-PLL-Synth/variable_freqdiv/db/cntr_cki.tdf Line: 26
-Info (12128): Elaborating entity "cntr_cki" for hierarchy "LPM_COUNTER:div_M|cntr_cki:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 259
-Warning (272007): LPM_MODULUS input value is 4000000. It should be within the range of 1 to 2^6. Assume no modulus input
-Info (12128): Elaborating entity "LPM_COUNTER" for hierarchy "LPM_COUNTER:div_M11"
-Warning (287001): Assertion warning: Value of LPM_MODULUS parameter (4000000) is too large for a 6-bit counter File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 449
-Info (12130): Elaborated megafunction instantiation "LPM_COUNTER:div_M11"
-Info (12133): Instantiated megafunction "LPM_COUNTER:div_M11" with the following parameter:
-    Info (12134): Parameter "LPM_DIRECTION" = "DEFAULT"
-    Info (12134): Parameter "LPM_MODULUS" = "4000000"
+Info (12128): Elaborating entity "cntr_cki" for hierarchy "LPM_COUNTER:div_M10|cntr_cki:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 259
+Info (12128): Elaborating entity "LPM_LATCH" for hierarchy "LPM_LATCH:inst5"
+Info (12130): Elaborated megafunction instantiation "LPM_LATCH:inst5"
+Info (12133): Instantiated megafunction "LPM_LATCH:inst5" with the following parameter:
     Info (12134): Parameter "LPM_WIDTH" = "6"
-Warning (287001): Assertion warning: LPM_MODULUS input value is 4000000. It should be within the range of 1 to 2^6. Assume no modulus input File: C:/Users/a_hui/source/repos/dotNET-PLL-Synth/variable_freqdiv/db/cntr_ehj.tdf Line: 100
-Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_ehj.tdf
-    Info (12023): Found entity 1: cntr_ehj File: C:/Users/a_hui/source/repos/dotNET-PLL-Synth/variable_freqdiv/db/cntr_ehj.tdf Line: 26
-Info (12128): Elaborating entity "cntr_ehj" for hierarchy "LPM_COUNTER:div_M11|cntr_ehj:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 259
-Info (12128): Elaborating entity "LPM_LATCH" for hierarchy "LPM_LATCH:inst4"
-Info (12130): Elaborated megafunction instantiation "LPM_LATCH:inst4"
-Info (12133): Instantiated megafunction "LPM_LATCH:inst4" with the following parameter:
-    Info (12134): Parameter "LPM_WIDTH" = "6"
-Info (12086): Created PLL "CLK_base~0" from CLKLOCKx1 Input Frequency logic option on input pin "CLK_base"
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning (15899): PLL "CLK_base~0" has parameters clk1_multiply_by and clk1_divide_by specified but port CLK[1] is not connected
-Info (21057): Implemented 54 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 10 input pins
-    Info (21059): Implemented 2 output pins
-    Info (21061): Implemented 41 logic cells
-    Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 4861 megabytes
-    Info: Processing ended: Wed Nov 29 16:46:55 2023
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 30 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 9 input pins
+    Info (21059): Implemented 1 output pins
+    Info (21061): Implemented 20 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4828 megabytes
+    Info: Processing ended: Sat Dec 02 12:46:59 2023
     Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:14
 

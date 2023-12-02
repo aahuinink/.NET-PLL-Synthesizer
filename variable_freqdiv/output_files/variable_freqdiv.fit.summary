@@ -1,18 +1,18 @@
-Fitter Status : Successful - Wed Nov 29 16:46:59 2023
+Fitter Status : Successful - Sat Dec 02 12:47:04 2023
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : variable_freqdiv
 Top-level Entity Name : variable_freqdiv
 Family : MAX 10
 Device : 10M02SCM153C8G
 Timing Models : Final
-Total logic elements : 42 / 2,304 ( 2 % )
-    Total combinational functions : 42 / 2,304 ( 2 % )
-    Dedicated logic registers : 18 / 2,304 ( < 1 % )
-Total registers : 18
-Total pins : 12 / 112 ( 11 % )
+Total logic elements : 21 / 2,304 ( < 1 % )
+    Total combinational functions : 18 / 2,304 ( < 1 % )
+    Dedicated logic registers : 9 / 2,304 ( < 1 % )
+Total registers : 9
+Total pins : 10 / 112 ( 9 % )
 Total virtual pins : 0
 Total memory bits : 0 / 110,592 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 32 ( 0 % )
-Total PLLs : 1 / 1 ( 100 % )
+Total PLLs : 0 / 1 ( 0 % )
 UFM blocks : 0 / 1 ( 0 % )
 ADC blocks : 0

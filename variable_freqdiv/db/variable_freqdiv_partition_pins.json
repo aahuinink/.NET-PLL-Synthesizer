@@ -4,19 +4,15 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "M_out",
-					"strict" : false
-				},
-				{
 					"name" : "N_out",
 					"strict" : false
 				},
 				{
-					"name" : "VCO_in",
+					"name" : "N_set",
 					"strict" : false
 				},
 				{
-					"name" : "M_set",
+					"name" : "CLK",
 					"strict" : false
 				},
 				{
@@ -44,7 +40,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "N_set",
+					"name" : "VCO_in",
 					"strict" : false
 				}
 			]

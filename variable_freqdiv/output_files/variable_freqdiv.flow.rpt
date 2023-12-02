@@ -1,5 +1,5 @@
 Flow report for variable_freqdiv
-Wed Nov 29 16:47:05 2023
+Sat Dec 02 12:47:10 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,22 +41,22 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed Nov 29 16:47:03 2023       ;
+; Flow Status                        ; Successful - Sat Dec 02 12:47:07 2023       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; variable_freqdiv                            ;
 ; Top-level Entity Name              ; variable_freqdiv                            ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M02SCM153C8G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 42 / 2,304 ( 2 % )                          ;
-;     Total combinational functions  ; 42 / 2,304 ( 2 % )                          ;
-;     Dedicated logic registers      ; 18 / 2,304 ( < 1 % )                        ;
-; Total registers                    ; 18                                          ;
-; Total pins                         ; 12 / 112 ( 11 % )                           ;
+; Total logic elements               ; 21 / 2,304 ( < 1 % )                        ;
+;     Total combinational functions  ; 18 / 2,304 ( < 1 % )                        ;
+;     Dedicated logic registers      ; 9 / 2,304 ( < 1 % )                         ;
+; Total registers                    ; 9                                           ;
+; Total pins                         ; 10 / 112 ( 9 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 110,592 ( 0 % )                         ;
 ; Embedded Multiplier 9-bit elements ; 0 / 32 ( 0 % )                              ;
-; Total PLLs                         ; 1 / 1 ( 100 % )                             ;
+; Total PLLs                         ; 0 / 1 ( 0 % )                               ;
 ; UFM blocks                         ; 0 / 1 ( 0 % )                               ;
 ; ADC blocks                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/29/2023 16:46:49 ;
+; Start date & time ; 12/02/2023 12:46:52 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; variable_freqdiv    ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 238300924579807.170130520917892        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 238300924579807.170155001241108        ; --            ; --          ; --         ;
 ; FLOW_ENABLE_POWER_ANALYZER          ; On                                     ; Off           ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
@@ -97,12 +97,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4861 MB             ; 00:00:14                           ;
-; Fitter               ; 00:00:03     ; 1.1                     ; 6220 MB             ; 00:00:05                           ;
-; Assembler            ; 00:00:01     ; 1.0                     ; 4688 MB             ; 00:00:00                           ;
-; Power Analyzer       ; 00:00:01     ; 1.1                     ; 4920 MB             ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:01     ; 1.1                     ; 4870 MB             ; 00:00:01                           ;
-; Total                ; 00:00:13     ; --                      ; --                  ; 00:00:21                           ;
+; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4828 MB             ; 00:00:14                           ;
+; Fitter               ; 00:00:04     ; 1.1                     ; 6220 MB             ; 00:00:05                           ;
+; Assembler            ; 00:00:00     ; 1.0                     ; 4688 MB             ; 00:00:00                           ;
+; Power Analyzer       ; 00:00:01     ; 1.1                     ; 4911 MB             ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.1                     ; 4859 MB             ; 00:00:01                           ;
+; Total                ; 00:00:14     ; --                      ; --                  ; 00:00:21                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

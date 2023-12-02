@@ -11,6 +11,8 @@ using Meadow.Foundation.Leds;
 using Meadow.Hardware;
 using Meadow.Peripherals.Leds;
 using Meadow.Units;
+using MQTTnet;
+using MQTTnet.Client;
 
 namespace ComPortFinal
 {

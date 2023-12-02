@@ -49,6 +49,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="MQTTnet" Version="4.3.2.930" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <ProjectReference Include="..\ComPortFinal\ComPortFinal.csproj" />
 	</ItemGroup>
 
